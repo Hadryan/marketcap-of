@@ -1,0 +1,24 @@
+.homepage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.search-list-container {
+  margin: 0 40px 0 40px;
+}
+.title {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.span-A {
+  color: #cc73ff;
+}
+.span-B {
+  color: #6e2fff;
+}
+.selectedCoin-div {
+  flex-basis: 100%;
+}

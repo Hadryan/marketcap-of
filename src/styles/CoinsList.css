@@ -1,0 +1,28 @@
+.coins-container {
+  min-height: 80px;
+  max-height: 240px;
+  overflow: scroll;
+  border: solid 0.5px gray;
+  overflow-x: hidden;
+  margin-bottom: 20px;
+  width: 320px;
+  position: relative;
+}
+.coins-container::-webkit-scrollbar {
+  width: 10px;
+}
+.coins-container::-webkit-scrollbar-track {
+  background: rgb(51, 53, 85);
+}
+::-webkit-scrollbar-thumb {
+  background: #7717f3;
+}
+p {
+  text-align: center;
+}
+.icon-div {
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  opacity: 50%;
+}

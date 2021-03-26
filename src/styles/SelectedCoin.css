@@ -1,0 +1,61 @@
+.selectedCoins-container {
+  margin: 5rem 0 5rem 0;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.a-img {
+  width: 4rem;
+  height: 4rem;
+}
+.b-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.15rem;
+}
+.text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  flex-basis: 100%;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.coin-prices {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+}
+.img-price {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.percent {
+  margin-left: 0.5rem;
+
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+.positive {
+  color: #16c784;
+}
+.negative {
+  color: #ea3943;
+}
