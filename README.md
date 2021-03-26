@@ -51,9 +51,9 @@ To get a local copy up and running follow these simple steps.
    npm install
    ```
 3. Run project 
-```sh
-npm start
-```
+   ```sh
+   npm start
+   ```
    
 
 <!-- CONTRIBUTING -->
