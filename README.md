@@ -11,6 +11,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+             <li><a href="#try-it">Try it</a></li>
       </ul>
     </li>
     <li>
@@ -37,7 +38,7 @@
 * [React](https://reactjs.org/)
 
 ### Try it
- [https://emilneander.github.io/marketcap-of/](https://emilneander.github.io/marketcap-of/)
+* [https://emilneander.github.io/marketcap-of/](https://emilneander.github.io/marketcap-of/)
 <!-- GETTING STARTED -->
 ## Getting Started
 
