@@ -1,4 +1,4 @@
-<h1 align="center">Market cap of</h1>
+<h1 align="center"><a href="https://emilneander.github.io/marketcap-of/">Market cap of</a></h1>
   <h3 align="center">
     My React Web API project. The idea is to show what value a crypto coin would have if it had another coin's market cap.
 </h3>
@@ -11,6 +11,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+             <li><a href="#try-it">Try it</a></li>
       </ul>
     </li>
     <li>
@@ -31,10 +32,13 @@
 ## About The Project
 ![marketcap-of](https://user-images.githubusercontent.com/73109435/112599698-91b34d00-8e10-11eb-9eae-c5e98155e035.PNG)
 
+
 ### Built With
 
 * [React](https://reactjs.org/)
 
+### Try it
+* [https://emilneander.github.io/marketcap-of/](https://emilneander.github.io/marketcap-of/)
 <!-- GETTING STARTED -->
 ## Getting Started
 
