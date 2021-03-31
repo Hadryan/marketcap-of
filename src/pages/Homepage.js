@@ -40,11 +40,13 @@ const Homepage = () => {
 
   return (
     <div className="homepage">
-      <h1 className="title">
-        Show the value of <span className="span-A">A</span> <br />
-        with the market cap of
-        <span className="span-B"> B</span>
-      </h1>
+      <div className="title">
+        <h1>
+          Show the value of <span className="span-A">A</span> <br />
+          with the market cap of
+          <span className="span-B"> B</span>
+        </h1>
+      </div>
       <div className="search-list-container" ref={fromRef}>
         <Search
           setSearch={setSearchFrom}

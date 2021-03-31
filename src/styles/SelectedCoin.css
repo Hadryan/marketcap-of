@@ -80,4 +80,20 @@
   .text {
     margin-top: 2rem;
   }
+  .coin-prices {
+    font-size: 2rem;
+  }
+  .percent {
+    font-size: 1.25rem;
+  }
+  .a-img {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+  .text-div h2 {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
 }
