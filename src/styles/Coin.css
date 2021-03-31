@@ -21,8 +21,8 @@
 .coin {
   display: flex;
   align-items: center;
-  padding-right: 24px;
-  min-width: 300px;
+  justify-content: flex-start;
+  width: 100%;
   background-color: transparent;
 }
 .coin img {
@@ -50,4 +50,17 @@
 }
 .coin-marketcap {
   width: 155px;
+}
+@media (max-width: 800px) {
+  .coin-row {
+    padding-right: 1.5rem;
+  }
+  .coin h1 {
+    font-size: 0.9rem;
+    width: 100px;
+    margin-right: 15px;
+  }
+  .coin-symbol {
+    font-size: 0.9rem;
+  }
 }

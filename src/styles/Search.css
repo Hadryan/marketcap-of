@@ -6,6 +6,7 @@
   align-items: center;
 }
 .coin-text {
+  font-size: 2rem;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -26,4 +27,22 @@
 }
 ::placeholder {
   color: rgba(255, 255, 255, 0.658);
+}
+@media (max-width: 800px) {
+  .coin-text {
+    font-size: 1.75rem;
+  }
+  .coin-input {
+    width: 250px;
+    height: 40px;
+  }
+}
+@media (max-width: 555px) {
+  .coin-text {
+    font-size: 1.5rem;
+  }
+  .coin-input {
+    width: 250px;
+    height: 40px;
+  }
 }

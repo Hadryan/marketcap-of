@@ -2,16 +2,20 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+
   margin-top: 2rem;
   flex-wrap: wrap;
 }
 .search-list-container {
   margin: 0 40px 0 40px;
 }
+
 .title {
   flex-basis: 100%;
   text-align: center;
+  margin-top: 1rem;
   margin-bottom: 4rem;
+  font-size: 2rem;
 }
 .span-A {
   color: #cc73ff;
@@ -21,4 +25,19 @@
 }
 .selectedCoin-div {
   flex-basis: 100%;
+}
+@media (max-width: 800px) {
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 3.5rem;
+    margin-top: 0rem;
+  }
+  .search-list-container {
+    margin: 0 2.5% 0 2.5%;
+  }
+}
+@media (max-width: 555px) {
+  .search-list-container {
+    margin-bottom: 1rem;
+  }
 }

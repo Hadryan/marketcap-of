@@ -1,5 +1,9 @@
+.selectedCoin-container-parent {
+  display: flex;
+  justify-content: center;
+}
 .selectedCoins-container {
-  margin: 5rem 0 5rem 0;
+  margin: 5rem 1rem 0 1rem;
   flex-basis: 100%;
   display: flex;
   flex-direction: row;
@@ -22,12 +26,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .text {
   flex-basis: 100%;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
+  margin: 5rem 1rem 3rem 1rem;
   font-size: 1.25rem;
   display: flex;
   align-items: center;
@@ -49,7 +53,6 @@
 }
 .percent {
   margin-left: 0.5rem;
-
   font-weight: lighter;
   font-size: 1.5rem;
 }
@@ -58,4 +61,23 @@
 }
 .negative {
   color: #ea3943;
+}
+@media (max-width: 800px) {
+  .text {
+    font-size: 1.15rem;
+  }
+  .coin-prices {
+    font-size: 2.5rem;
+  }
+  .first-text {
+    width: 100%;
+  }
+}
+@media (max-width: 555px) {
+  .selectedCoins-container {
+    margin: 1.5rem 1rem 3rem 1rem;
+  }
+  .text {
+    margin-top: 2rem;
+  }
 }

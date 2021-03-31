@@ -26,3 +26,8 @@ p {
   text-align: center;
   opacity: 50%;
 }
+@media (max-width: 800px) {
+  .coins-container {
+    width: 250px;
+  }
+}
