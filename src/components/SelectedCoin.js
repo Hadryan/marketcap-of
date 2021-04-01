@@ -29,19 +29,28 @@ const SelectedCoin = ({ selectFromCoin, selectToCoin }) => {
             </h1>
           </div>
           <div className="text-div">
-            <h2 className="text">
-              <span className="first-text">
-                Thank you
-                <img className="b-img" src={b.image} alt="crypto b" />
-                {b.symbol.toUpperCase()} for giving
-              </span>
-              <span className="second-text">
-                <img className="b-img" src={a.image} alt="crypto a" />{" "}
-                {a.symbol.toUpperCase()} a market cap of: $
-                {b.market_cap.toLocaleString()}
-              </span>
+            <h2 className="first-text">
+              {a.symbol.toUpperCase()} market cap:{" "}
             </h2>
-            <h3>Original market cap: ${a.market_cap.toLocaleString()}</h3>
+            <h2 className="first-text first-mcap">
+              ${a.market_cap.toLocaleString()}
+            </h2>
+            <h2 className="second-text">
+              {b.symbol.toUpperCase()} market cap:{" "}
+            </h2>
+            <h2 className="second-text second-mcap">
+              ${b.market_cap.toLocaleString()}
+            </h2>
+            <img //imgages to grid
+              className="b-img first-text-img"
+              src={a.image}
+              alt="crypto b"
+            />
+            <img
+              className="b-img second-text-img"
+              src={b.image}
+              alt="crypto a"
+            />{" "}
           </div>
           {/* <p className="coin-marketcap">${a.market_cap.toLocaleString()}</p> */}
         </div>
