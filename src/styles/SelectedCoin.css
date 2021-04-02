@@ -11,6 +11,12 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+.market-cap-title {
+  grid-column: 1/5;
+  grid-row: 1/2;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
 .a-img {
   width: 4rem;
   height: 4rem;
@@ -23,26 +29,26 @@
 }
 .first-text-img {
   grid-column: 1/2;
-  grid-row: 1/2;
+  grid-row: 2/3;
 }
 .second-text-img {
   grid-column: 1/2;
-  grid-row: 2/3;
+  grid-row: 3/4;
 }
 .text-div {
   display: grid;
   grid-template-columns: auto auto 0.5rem auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   margin-top: 3.5rem;
 }
 .first-text {
   grid-column: 2/3;
-  grid-row: 1/2;
+  grid-row: 2/3;
   align-items: center;
 }
 .second-text {
   grid-column: 2/3;
-  grid-row: 2/3;
+  grid-row: 3/4;
   align-items: center;
 }
 .first-mcap {
@@ -90,6 +96,8 @@
   .percent {
     font-size: 1.25rem;
   }
+  .market-cap-title {
+  }
   .a-img {
     width: 3.25rem;
     height: 3.25rem;
@@ -99,7 +107,7 @@
     height: 1rem;
   }
   .text-div h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   h3 {
     font-size: 1rem;
@@ -107,6 +115,6 @@
 }
 @media (max-width: 360px) {
   .text-div h2 {
-    font-size: 0.85rem;
+    font-size: 1.25rem;
   }
 }

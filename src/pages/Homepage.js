@@ -13,18 +13,20 @@ import SelectedCoin from "../components/SelectedCoin";
 import useClickOutside from "../hooks/useClickOutside";
 
 const Homepage = () => {
+  const [api, setApi] = useState(apiUrl);
   const [coins, setCoins] = useState([]);
-
-  const [searchFrom, setSearchFrom] = useState("");
-  const [searchTo, setSearchTo] = useState("");
-  const [displayFrom, setDisplayFrom] = useState(false);
-  const [displayTo, setDisplayTo] = useState(false);
-  const [selectFromCoin, setSelectFromCoin] = useState({});
-  const [selectToCoin, setSelectToCoin] = useState({});
+  const [searchA, setSearchA] = useState("");
+  const [searchB, setSearchB] = useState("");
+  const [displayAList, setDisplayAList] = useState(false);
+  const [displayBList, setDisplayBList] = useState(false);
+  const [filteredCoinsA, setFilteredCoinsA] = useState({});
+  const [filteredCoinsB, setFilteredCoinsB] = useState({});
+  const [selectACoin, setSelectACoin] = useState({});
+  const [selectBCoin, setSelectBCoin] = useState({});
 
   useEffect(() => {
     axios
-      .get(apiUrl)
+      .get(api)
       .then((res) => {
         setCoins(res.data);
       })
@@ -32,10 +34,10 @@ const Homepage = () => {
   }, []);
 
   const fromRef = useClickOutside(() => {
-    setDisplayFrom(false);
+    setDisplayAList(false);
   });
   const toRef = useClickOutside(() => {
-    setDisplayTo(false);
+    setDisplayBList(false);
   });
 
   return (
@@ -49,19 +51,22 @@ const Homepage = () => {
       </div>
       <div className="search-list-container" ref={fromRef}>
         <Search
-          setSearch={setSearchFrom}
-          search={searchFrom}
+          setSearch={setSearchA}
+          search={searchA}
           searchName="A"
-          setDisplay={setDisplayFrom}
+          setDisplay={setDisplayAList}
           placeholder="e.g Ethereum"
+          setSelectCoin={setSelectACoin}
+          filteredCoins={filteredCoinsA}
         />
-        {displayFrom ? (
+        {displayAList ? (
           <CoinsList
             coins={coins}
-            search={searchFrom}
-            setSelectCoin={setSelectFromCoin}
-            setDisplay={setDisplayFrom}
-            setSearch={setSearchFrom}
+            search={searchA}
+            setSelectCoin={setSelectACoin}
+            setDisplay={setDisplayAList}
+            setSearch={setSearchA}
+            setFilteredCoins={setFilteredCoinsA}
           />
         ) : (
           ""
@@ -70,29 +75,29 @@ const Homepage = () => {
 
       <div className="search-list-container" ref={toRef}>
         <Search
-          setSearch={setSearchTo}
-          search={searchTo}
+          setSearch={setSearchB}
+          search={searchB}
           searchName="B"
-          setDisplay={setDisplayTo}
+          setDisplay={setDisplayBList}
           placeholder="e.g Bitcoin"
+          setSelectCoin={setSelectBCoin}
+          filteredCoins={filteredCoinsB}
         />
-        {displayTo ? (
+        {displayBList ? (
           <CoinsList
             coins={coins}
-            search={searchTo}
-            setSelectCoin={setSelectToCoin}
-            setDisplay={setDisplayTo}
-            setSearch={setSearchTo}
+            search={searchB}
+            setSelectCoin={setSelectBCoin}
+            setDisplay={setDisplayBList}
+            setSearch={setSearchB}
+            setFilteredCoins={setFilteredCoinsB}
           />
         ) : (
           ""
         )}
       </div>
       <div className="selectedCoin-div">
-        <SelectedCoin
-          selectFromCoin={selectFromCoin}
-          selectToCoin={selectToCoin}
-        />
+        <SelectedCoin selectFromCoin={selectACoin} selectToCoin={selectBCoin} />
       </div>
     </div>
   );

@@ -1,6 +1,14 @@
 import React from "react";
 import "../styles/Search.css";
-const Search = ({ setSearch, search, searchName, setDisplay, placeholder }) => {
+const Search = ({
+  setSearch,
+  search,
+  searchName,
+  setDisplay,
+  placeholder,
+  filteredCoins,
+  setSelectCoin,
+}) => {
   const handleChange = (e) => {
     setSearch(e.target.value);
     setDisplay(true);
@@ -8,8 +16,13 @@ const Search = ({ setSearch, search, searchName, setDisplay, placeholder }) => {
   const handleClick = () => {
     setDisplay(true);
   };
-  const handleSubmit = () => {
-    return;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (filteredCoins[0]) {
+      setSearch(filteredCoins[0].name);
+      setDisplay(false);
+      setSelectCoin(filteredCoins[0]);
+    }
   };
   //ref
 
@@ -18,7 +31,7 @@ const Search = ({ setSearch, search, searchName, setDisplay, placeholder }) => {
       <h1 className="coin-text">
         Select <span className={"span-" + searchName}>{searchName}</span>
       </h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           className="coin-input"
           type="text"
@@ -26,7 +39,6 @@ const Search = ({ setSearch, search, searchName, setDisplay, placeholder }) => {
           placeholder={placeholder}
           onChange={handleChange}
           onClick={handleClick}
-          onSubmit={handleSubmit}
         />
       </form>
     </div>

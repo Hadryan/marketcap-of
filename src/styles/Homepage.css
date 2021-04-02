@@ -32,7 +32,7 @@
 @media (max-width: 800px) {
   .title h1 {
     font-size: 1.75rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
     margin-top: 0rem;
   }
   .search-list-container {
@@ -47,5 +47,6 @@
 @media (max-width: 360px) {
   .title h1 {
     font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 }

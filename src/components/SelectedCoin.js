@@ -14,6 +14,7 @@ const SelectedCoin = ({ selectFromCoin, selectToCoin }) => {
     <div className="selectedCoin-container-parent">
       {/* Only write out when there is a valid coin in both from and to */}
       {Object.keys(a).length && Object.keys(b).length ? (
+        //the actual selected coin to show "value" of
         <div className="selectedCoins-container">
           <div className="img-price">
             <img className="a-img" src={a.image} alt="crypto a" />
@@ -28,16 +29,14 @@ const SelectedCoin = ({ selectFromCoin, selectToCoin }) => {
               </span>
             </h1>
           </div>
+          {/* here is the grid of market caps */}
           <div className="text-div">
-            <h2 className="first-text">
-              {a.symbol.toUpperCase()} market cap:{" "}
-            </h2>
+            <h2 className="market-cap-title">Market cap</h2>
+            <h2 className="first-text">{a.symbol.toUpperCase()}: </h2>
             <h2 className="first-text first-mcap">
               ${a.market_cap.toLocaleString()}
             </h2>
-            <h2 className="second-text">
-              {b.symbol.toUpperCase()} market cap:{" "}
-            </h2>
+            <h2 className="second-text">{b.symbol.toUpperCase()}: </h2>
             <h2 className="second-text second-mcap">
               ${b.market_cap.toLocaleString()}
             </h2>

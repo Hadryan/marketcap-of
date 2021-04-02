@@ -20,15 +20,18 @@ const CoinsList = ({
     )
       return coin;
   });
+  useEffect(() => {
+    setFilteredCoins(filteredCoins);
+  }, [search]);
 
-  console.log(filteredCoins[0]);
   return (
     <div className="coins-container">
-      {/* if we get any coins we map them out (therefore "coins.length ?") */}
+      {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
         filteredCoins.map((coin) => {
           return (
             <Coin
+              filteredCoins={filteredCoins}
               setSearch={setSearch}
               setSelectCoin={setSelectCoin}
               coinElement={coin}
