@@ -9,8 +9,11 @@ const CoinsList = ({
   coins,
   setSelectCoin,
   setDisplay,
+  display,
   setSearch,
   setFilteredCoins,
+  setNr,
+  nr,
 }) => {
   //filter coins to what the current search value is
   const filteredCoins = coins.filter((coin) => {
@@ -20,10 +23,16 @@ const CoinsList = ({
     )
       return coin;
   });
+  //useeffects
+  //set filtered coins when input is changed
   useEffect(() => {
     setFilteredCoins(filteredCoins);
   }, [search]);
-
+  //setNr to 0 when display is refreshed
+  useEffect(() => {
+    setNr(0);
+    console.log("display is changed");
+  }, [display]);
   return (
     <div className="coins-container">
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
@@ -31,6 +40,7 @@ const CoinsList = ({
         filteredCoins.map((coin) => {
           return (
             <Coin
+              nr={nr}
               filteredCoins={filteredCoins}
               setSearch={setSearch}
               setSelectCoin={setSelectCoin}

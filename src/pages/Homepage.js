@@ -21,8 +21,7 @@ const Homepage = () => {
   const [displayBList, setDisplayBList] = useState(false);
   const [filteredCoinsA, setFilteredCoinsA] = useState({});
   const [filteredCoinsB, setFilteredCoinsB] = useState({});
-  const [selectInDropdownA, setSelectInDropdownA] = useState(filteredCoinsA[0]);
-  const [selectInDropdownB, setSelectInDropdownB] = useState(filteredCoinsB[0]);
+  const [selectNr, setSelectNr] = useState(0);
   const [selectACoin, setSelectACoin] = useState({});
   const [selectBCoin, setSelectBCoin] = useState({});
 
@@ -34,7 +33,7 @@ const Homepage = () => {
       })
       .catch((error) => console.log(error));
   }, []);
-  console.log(selectInDropdownA);
+  console.log(selectNr);
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });
@@ -60,15 +59,20 @@ const Homepage = () => {
           placeholder="e.g Ethereum"
           setSelectCoin={setSelectACoin}
           filteredCoins={filteredCoinsA}
+          nr={selectNr}
+          setNr={setSelectNr}
         />
         {displayAList ? (
           <CoinsList
             coins={coins}
             search={searchA}
             setSelectCoin={setSelectACoin}
+            display={displayAList}
             setDisplay={setDisplayAList}
             setSearch={setSearchA}
             setFilteredCoins={setFilteredCoinsA}
+            setNr={setSelectNr}
+            nr={selectNr}
           />
         ) : (
           ""
@@ -84,6 +88,8 @@ const Homepage = () => {
           placeholder="e.g Bitcoin"
           setSelectCoin={setSelectBCoin}
           filteredCoins={filteredCoinsB}
+          setNr={setSelectNr}
+          nr={selectNr}
         />
         {displayBList ? (
           <CoinsList
@@ -91,8 +97,11 @@ const Homepage = () => {
             search={searchB}
             setSelectCoin={setSelectBCoin}
             setDisplay={setDisplayBList}
+            display={displayBList}
             setSearch={setSearchB}
             setFilteredCoins={setFilteredCoinsB}
+            setNr={setSelectNr}
+            nr={selectNr}
           />
         ) : (
           ""

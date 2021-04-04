@@ -11,6 +11,8 @@ const Coin = ({
   setSelectCoin,
   setDisplay,
   setSearch,
+  nr,
+  filteredCoins,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -19,11 +21,17 @@ const Coin = ({
       setSelectCoin(coinElement);
       setSearch(name);
       setDisplay(false);
-    } else return;
+    }
   };
   return (
     <div className="coin-container" onClick={clickHandler}>
-      <div className="coin-row">
+      <div
+        className={
+          name && name === filteredCoins[nr].name
+            ? "coin-row selected-dropdown"
+            : "coin-row"
+        }
+      >
         <div className="coin">
           <img src={image} alt="crypto" />
           <h1>{name}</h1>

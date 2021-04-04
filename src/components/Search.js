@@ -8,28 +8,49 @@ const Search = ({
   placeholder,
   filteredCoins,
   setSelectCoin,
+  nr,
+  setNr,
 }) => {
   const ref = useRef();
   const handleChange = (e) => {
     setSearch(e.target.value);
     setDisplay(true);
+    setNr(0);
   };
   const handleClick = () => {
     setDisplay(true);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (filteredCoins[0]) {
-      setSelectCoin(filteredCoins[0]);
-      setSearch(filteredCoins[0].name);
+    if (filteredCoins[nr]) {
+      setSelectCoin(filteredCoins[nr]);
+      setSearch(filteredCoins[nr].name);
       setDisplay(false);
       // e.target.querySelector("input").blur(); would do the same.
       ref.current.blur();
     }
   };
-  const handleFocus = (e) => {};
-  //ref
-
+  // const handleFocus = (e) => {
+  //   if (e.target.value === "down") {
+  //     setSelectInDropdown(initial + 1);
+  //   }
+  // };
+  const handleKeyDown = (e) => {
+    switch (e.keyCode) {
+      case 40: //down
+        if (nr != filteredCoins.length - 1) {
+          console.log("click");
+          setNr(nr + 1);
+        }
+        break;
+      case 38: //up
+        if (nr != 0) {
+          console.log("click");
+          setNr(nr - 1);
+        }
+        break;
+    }
+  };
   return (
     <div className="coin-search">
       <h1 className="coin-text">
@@ -43,8 +64,9 @@ const Search = ({
           placeholder={placeholder}
           onChange={handleChange}
           onClick={handleClick}
-          onFocus={handleFocus}
           ref={ref}
+          onKeyDown={handleKeyDown}
+          // onFocus={handleFocus}
         />
       </form>
     </div>

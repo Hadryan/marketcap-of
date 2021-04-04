@@ -15,9 +15,9 @@
   border-bottom: solid 1px gray;
   cursor: pointer;
 }
-/* .selected-dropdown> {
-  background-color: aqua;
-} */
+.selected-dropdown {
+  background-color: rgb(55, 58, 88);
+}
 .coin-row:hover {
   background-color: rgb(55, 58, 88);
 }
