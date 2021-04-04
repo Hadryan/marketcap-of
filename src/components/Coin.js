@@ -3,6 +3,7 @@ import "../styles/Coin.css";
 
 const Coin = ({
   coinElement,
+  index,
   name,
   image,
   symbol,
@@ -12,6 +13,7 @@ const Coin = ({
   setDisplay,
   setSearch,
   nr,
+  setNr,
   filteredCoins,
 }) => {
   //when clicking on a coin in the list
@@ -23,11 +25,19 @@ const Coin = ({
       setDisplay(false);
     }
   };
+  //to change position of dropdown selector
+  const mouseOverHandler = () => {
+    setNr(index);
+  };
   return (
-    <div className="coin-container" onClick={clickHandler}>
+    <div
+      className="coin-container"
+      onClick={clickHandler}
+      onMouseOver={mouseOverHandler}
+    >
       <div
         className={
-          name && name === filteredCoins[nr].name
+          name.length && name === filteredCoins[nr].name
             ? "coin-row selected-dropdown"
             : "coin-row"
         }

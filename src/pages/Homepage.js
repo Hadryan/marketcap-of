@@ -35,7 +35,7 @@ const Homepage = () => {
       .catch((error) => console.log(error));
     // }, 4000);
   }, []);
-  console.log(selectNr);
+
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });

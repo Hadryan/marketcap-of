@@ -16,11 +16,9 @@
   cursor: pointer;
 }
 .selected-dropdown {
-  background-color: rgb(55, 58, 88);
+  background-color: rgb(62, 65, 99);
 }
-.coin-row:hover {
-  background-color: rgb(55, 58, 88);
-}
+
 .coin {
   display: flex;
   align-items: center;

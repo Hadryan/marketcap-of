@@ -33,10 +33,11 @@ const CoinsList = ({
     <div className="coins-container">
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
-        filteredCoins.map((coin) => {
+        filteredCoins.map((coin, index) => {
           return (
             <Coin
               nr={nr}
+              setNr={setNr}
               filteredCoins={filteredCoins}
               setSearch={setSearch}
               setSelectCoin={setSelectCoin}
@@ -48,6 +49,7 @@ const CoinsList = ({
               symbol={coin.symbol}
               marketcap={coin.market_cap}
               price={coin.current_price}
+              index={index}
             />
           );
         })

@@ -38,13 +38,11 @@ const Search = ({
     switch (e.keyCode) {
       case 40: //down
         if (nr != filteredCoins.length - 1) {
-          console.log("click");
           setNr(nr + 1);
         }
         break;
       case 38: //up
         if (nr != 0) {
-          console.log("click");
           setNr(nr - 1);
         }
         break;
