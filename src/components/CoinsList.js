@@ -28,11 +28,7 @@ const CoinsList = ({
   useEffect(() => {
     setFilteredCoins(filteredCoins);
   }, [search]);
-  //setNr to 0 when display is refreshed
-  useEffect(() => {
-    setNr(0);
-    console.log("display is changed");
-  }, [display]);
+
   return (
     <div className="coins-container">
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}

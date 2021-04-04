@@ -30,11 +30,10 @@ const Search = ({
       ref.current.blur();
     }
   };
-  // const handleFocus = (e) => {
-  //   if (e.target.value === "down") {
-  //     setSelectInDropdown(initial + 1);
-  //   }
-  // };
+  //when input is blurred we set the selected drop down number to 0
+  const handleBlur = () => {
+    setNr(0);
+  };
   const handleKeyDown = (e) => {
     switch (e.keyCode) {
       case 40: //down
@@ -66,6 +65,7 @@ const Search = ({
           onClick={handleClick}
           ref={ref}
           onKeyDown={handleKeyDown}
+          onBlur={handleBlur}
           // onFocus={handleFocus}
         />
       </form>

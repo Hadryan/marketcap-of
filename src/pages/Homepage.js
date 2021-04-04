@@ -26,12 +26,14 @@ const Homepage = () => {
   const [selectBCoin, setSelectBCoin] = useState({});
 
   useEffect(() => {
+    // setTimeout(() => {
     axios
       .get(api)
       .then((res) => {
         setCoins(res.data);
       })
       .catch((error) => console.log(error));
+    // }, 4000);
   }, []);
   console.log(selectNr);
   const aRef = useClickOutside(() => {
