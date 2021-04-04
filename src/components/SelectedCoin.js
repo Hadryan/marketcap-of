@@ -4,11 +4,11 @@ import Coin from "./Coin";
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
 
-const SelectedCoin = ({ selectFromCoin, selectToCoin }) => {
-  const price = calculatePrice(selectFromCoin, selectToCoin);
-  const percentage = calculatePercentage(price, selectFromCoin.current_price);
-  const a = selectFromCoin;
-  const b = selectToCoin;
+const SelectedCoin = ({ selectACoin, selectBCoin }) => {
+  const price = calculatePrice(selectACoin, selectBCoin);
+  const percentage = calculatePercentage(price, selectACoin.current_price);
+  const a = selectACoin;
+  const b = selectBCoin;
 
   return (
     <div className="selectedCoin-container-parent">

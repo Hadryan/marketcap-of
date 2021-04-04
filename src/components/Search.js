@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/Search.css";
 const Search = ({
   setSearch,
@@ -9,6 +9,7 @@ const Search = ({
   filteredCoins,
   setSelectCoin,
 }) => {
+  const ref = useRef();
   const handleChange = (e) => {
     setSearch(e.target.value);
     setDisplay(true);
@@ -19,11 +20,14 @@ const Search = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (filteredCoins[0]) {
+      setSelectCoin(filteredCoins[0]);
       setSearch(filteredCoins[0].name);
       setDisplay(false);
-      setSelectCoin(filteredCoins[0]);
+      // e.target.querySelector("input").blur(); would do the same.
+      ref.current.blur();
     }
   };
+  const handleFocus = (e) => {};
   //ref
 
   return (
@@ -39,6 +43,8 @@ const Search = ({
           placeholder={placeholder}
           onChange={handleChange}
           onClick={handleClick}
+          onFocus={handleFocus}
+          ref={ref}
         />
       </form>
     </div>

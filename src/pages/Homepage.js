@@ -21,6 +21,8 @@ const Homepage = () => {
   const [displayBList, setDisplayBList] = useState(false);
   const [filteredCoinsA, setFilteredCoinsA] = useState({});
   const [filteredCoinsB, setFilteredCoinsB] = useState({});
+  const [selectInDropdownA, setSelectInDropdownA] = useState(filteredCoinsA[0]);
+  const [selectInDropdownB, setSelectInDropdownB] = useState(filteredCoinsB[0]);
   const [selectACoin, setSelectACoin] = useState({});
   const [selectBCoin, setSelectBCoin] = useState({});
 
@@ -32,11 +34,11 @@ const Homepage = () => {
       })
       .catch((error) => console.log(error));
   }, []);
-
-  const fromRef = useClickOutside(() => {
+  console.log(selectInDropdownA);
+  const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });
-  const toRef = useClickOutside(() => {
+  const bRef = useClickOutside(() => {
     setDisplayBList(false);
   });
 
@@ -49,7 +51,7 @@ const Homepage = () => {
           <span className="span-B"> B</span>
         </h1>
       </div>
-      <div className="search-list-container" ref={fromRef}>
+      <div className="search-list-container" ref={aRef}>
         <Search
           setSearch={setSearchA}
           search={searchA}
@@ -73,7 +75,7 @@ const Homepage = () => {
         )}
       </div>
 
-      <div className="search-list-container" ref={toRef}>
+      <div className="search-list-container" ref={bRef}>
         <Search
           setSearch={setSearchB}
           search={searchB}
@@ -97,7 +99,7 @@ const Homepage = () => {
         )}
       </div>
       <div className="selectedCoin-div">
-        <SelectedCoin selectFromCoin={selectACoin} selectToCoin={selectBCoin} />
+        <SelectedCoin selectACoin={selectACoin} selectBCoin={selectBCoin} />
       </div>
     </div>
   );
