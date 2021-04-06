@@ -20,6 +20,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#packages">Packages</a></li>
@@ -30,7 +31,7 @@
 
 ## About The Project
 
-![marketcap-of](https://user-images.githubusercontent.com/73109435/112599698-91b34d00-8e10-11eb-9eae-c5e98155e035.PNG)
+![marketcap-of-new](https://user-images.githubusercontent.com/73109435/113704159-11c49700-96dc-11eb-8f34-14ab644f7d4a.PNG)
 (Collecting data with Coingecko's API)
 
 ### Built With
