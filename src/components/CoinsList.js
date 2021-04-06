@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Coin from "./Coin";
 import "../styles/CoinsList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,14 +28,23 @@ const CoinsList = ({
   useEffect(() => {
     setFilteredCoins(filteredCoins);
   }, [search]);
-
+  //when dropdown select number is changed - scroll when nr > 3
+  useEffect(() => {
+    // ref.current.scrollIntoView();
+    console.log(ref);
+  }, [nr]);
+  const ref = useRef(null);
+  const scrollHandler = () => {
+    console.log("scrolling");
+  };
   return (
-    <div className="coins-container">
+    <div className="coins-container" onScroll={scrollHandler}>
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
         filteredCoins.map((coin, index) => {
           return (
             <Coin
+              refProp={ref}
               nr={nr}
               setNr={setNr}
               filteredCoins={filteredCoins}

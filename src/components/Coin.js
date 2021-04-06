@@ -15,6 +15,7 @@ const Coin = ({
   nr,
   setNr,
   filteredCoins,
+  refProp,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -34,6 +35,7 @@ const Coin = ({
       className="coin-container"
       onClick={clickHandler}
       onMouseOver={mouseOverHandler}
+      ref={refProp}
     >
       <div
         className={

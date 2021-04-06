@@ -1,6 +1,6 @@
 <h1 align="center"><a href="https://emilneander.github.io/marketcap-of/">Market cap of</a></h1>
   <h3 align="center">
-    My React Web API project. The idea is to show what value a crypto coin would have if it had another coin's market cap.
+    My React crypto API project. The idea is to show what value a crypto coin would have if it had another coin's market cap.
 </h3>
 
 <!-- TABLE OF CONTENTS -->
@@ -26,20 +26,22 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
-## About The Project
-![marketcap-of](https://user-images.githubusercontent.com/73109435/112599698-91b34d00-8e10-11eb-9eae-c5e98155e035.PNG)
 
+## About The Project
+
+![marketcap-of](https://user-images.githubusercontent.com/73109435/112599698-91b34d00-8e10-11eb-9eae-c5e98155e035.PNG)
+(Collecting data with Coingecko's API)
 
 ### Built With
 
-* [React](https://reactjs.org/)
+- [React](https://reactjs.org/)
 
 ### Try it
-* [https://emilneander.github.io/marketcap-of/](https://emilneander.github.io/marketcap-of/)
+
+- [https://emilneander.github.io/marketcap-of/](https://emilneander.github.io/marketcap-of/)
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
@@ -54,14 +56,15 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm install
    ```
-3. Run project 
+3. Run project
    ```sh
    npm start
    ```
-   
 
 <!-- CONTRIBUTING -->
+
 ## Contributing
+
 Feel free to contribute, any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
@@ -71,10 +74,13 @@ Feel free to contribute, any contributions you make are **greatly appreciated**.
 5. Open a Pull Request
 
 <!-- CONTACT -->
+
 ## Contact
+
 Emil Neander - emil.neander@gmail.com
 
 <!-- Packages -->
-## Packages
-* [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
 
+## Packages
+
+- [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
