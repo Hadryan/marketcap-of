@@ -32,7 +32,6 @@
 ## About The Project
 
 ![marketcap-of-new](https://user-images.githubusercontent.com/73109435/113704159-11c49700-96dc-11eb-8f34-14ab644f7d4a.PNG)
-(Collecting data with Coingecko's API)
 
 ### Built With
 
