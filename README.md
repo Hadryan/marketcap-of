@@ -1,6 +1,6 @@
 <h1 align="center"><a href="https://emilneander.github.io/marketcap-of/">Market cap of</a></h1>
   <h3 align="center">
-    My React crypto API project. The idea is to show what value a crypto coin would have if it had another coin's market cap.
+   My crypto Web App project. The idea is to show what value a crypto coin would have if it had another coin's market cap.
 </h3>
 
 <!-- TABLE OF CONTENTS -->
