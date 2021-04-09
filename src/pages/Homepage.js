@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 //api
 import { apiUrl } from "../api";
 //fetch
@@ -42,6 +42,8 @@ const Homepage = () => {
   const bRef = useClickOutside(() => {
     setDisplayBList(false);
   });
+  //lifted up from CoinList
+  const refCurrentCoin = useRef(null);
 
   return (
     <div className="homepage">
@@ -54,6 +56,7 @@ const Homepage = () => {
       </div>
       <div className="search-list-container" ref={aRef}>
         <Search
+          refProp={refCurrentCoin}
           setSearch={setSearchA}
           search={searchA}
           searchName="A"
@@ -66,6 +69,7 @@ const Homepage = () => {
         />
         {displayAList ? (
           <CoinsList
+            refProp={refCurrentCoin}
             coins={coins}
             search={searchA}
             setSelectCoin={setSelectACoin}
@@ -83,6 +87,7 @@ const Homepage = () => {
 
       <div className="search-list-container" ref={bRef}>
         <Search
+          refProp={refCurrentCoin}
           setSearch={setSearchB}
           search={searchB}
           searchName="B"
@@ -95,6 +100,7 @@ const Homepage = () => {
         />
         {displayBList ? (
           <CoinsList
+            refProp={refCurrentCoin}
             coins={coins}
             search={searchB}
             setSelectCoin={setSelectBCoin}

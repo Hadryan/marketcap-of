@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 
 const CoinsList = ({
+  refProp,
   search,
   coins,
   setSelectCoin,
@@ -28,23 +29,25 @@ const CoinsList = ({
   useEffect(() => {
     setFilteredCoins(filteredCoins);
   }, [search]);
-  //when dropdown select number is changed - scroll when nr > 3
-  useEffect(() => {
-    // ref.current.scrollIntoView();
-    console.log(ref);
-  }, [nr]);
-  const ref = useRef(null);
+  //when dropdown select number is changed - scroll to html element selected
+  // const handleKeyDown = (e) =>{
+  // if(e.keyCode)
+  // refCurrentCoin.current.childNodes[nr].scrollIntoView({
+  //   behavior: "smooth",
+  //   block: "end",
+  // });
+  // }
+
   const scrollHandler = () => {
     console.log("scrolling");
   };
   return (
-    <div className="coins-container" onScroll={scrollHandler}>
+    <div className="coins-container" onScroll={scrollHandler} ref={refProp}>
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
         filteredCoins.map((coin, index) => {
           return (
             <Coin
-              refProp={ref}
               nr={nr}
               setNr={setNr}
               filteredCoins={filteredCoins}

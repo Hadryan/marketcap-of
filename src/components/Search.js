@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import "../styles/Search.css";
 const Search = ({
+  refProp,
   setSearch,
   search,
   searchName,
@@ -35,6 +36,10 @@ const Search = ({
     setNr(0);
   };
   const handleKeyDown = (e) => {
+    refProp.current.childNodes[nr].scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
     switch (e.keyCode) {
       case 40: //down
         if (nr != filteredCoins.length - 1) {
