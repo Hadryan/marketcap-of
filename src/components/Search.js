@@ -44,12 +44,12 @@ const Search = ({
     setMouseMove(false);
     switch (e.keyCode) {
       case 40: //down
-        if (nr != filteredCoins.length - 1) {
+        if (nr !== filteredCoins.length - 1) {
           setNr(nr + 1);
         }
         break;
       case 38: //up
-        if (nr != 0) {
+        if (nr !== 0) {
           setNr(nr - 1);
         }
         break;

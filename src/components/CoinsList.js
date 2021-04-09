@@ -14,6 +14,7 @@ const CoinsList = ({
   setNr,
   nr,
   keyPress,
+  setKeyPress,
   mouseMove,
 }) => {
   //filter coins to what the current search value is
@@ -33,14 +34,27 @@ const CoinsList = ({
 
   //when keyPress is changed - scroll to html element selected
   useEffect(() => {
-    refCurrentCoin.current.childNodes[nr].scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
+    //only try scroll if coins in list exists
+    if (filteredCoins.length) {
+      refCurrentCoin.current.childNodes[nr].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
   }, [keyPress]);
 
   //ref for current coin in list
   const refCurrentCoin = useRef(null);
+
+  //handlers
+  const handleMouseDown = (e) => {
+    //to not get focus on scroller
+    e.preventDefault();
+    //go to last coin in list - 1 because first is 0 and last is 249
+    //setNr(filteredCoins.length - 1);
+    //to refresh and scroll to it
+    //  setKeyPress(true);
+  };
 
   return (
     <div className="coins-container" ref={refCurrentCoin}>
@@ -71,8 +85,8 @@ const CoinsList = ({
         //else
         <p>Loading...</p>
       )}
-      {coins.length ? (
-        <div className="icon-div">
+      {nr < filteredCoins.length - 3 ? (
+        <div className="icon-div" onMouseDown={handleMouseDown}>
           <FontAwesomeIcon className="down" icon={faAngleDoubleDown} />
         </div>
       ) : (

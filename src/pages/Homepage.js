@@ -83,6 +83,7 @@ const Homepage = () => {
             setNr={setSelectNr}
             nr={selectNr}
             keyPress={keyPress}
+            setKeyPress={setKeyPress}
             mouseMove={mouseMove}
           />
         ) : (
@@ -116,6 +117,7 @@ const Homepage = () => {
             setNr={setSelectNr}
             nr={selectNr}
             keyPress={keyPress}
+            setKeyPress={setKeyPress}
             mouseMove={mouseMove}
           />
         ) : (
