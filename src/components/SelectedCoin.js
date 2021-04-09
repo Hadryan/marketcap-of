@@ -3,14 +3,23 @@ import React from "react";
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
 
-const SelectedCoin = ({ selectACoin, selectBCoin }) => {
+const SelectedCoin = ({
+  selectACoin,
+  selectBCoin,
+  displayAList,
+  displayBList,
+}) => {
   const price = calculatePrice(selectACoin, selectBCoin);
   const percentage = calculatePercentage(price, selectACoin.current_price);
   const a = selectACoin;
   const b = selectBCoin;
 
   return (
-    <div className="selectedCoin-container-parent">
+    <div
+      className="selectedCoin-container-parent"
+      //change opacity when display is true
+      style={displayAList || displayBList ? { opacity: 0.25 } : { opacity: 1 }}
+    >
       {/* Only write out when there is a valid coin in both from and to */}
       {Object.keys(a).length && Object.keys(b).length ? (
         //the actual selected coin to show "value" of
@@ -18,7 +27,10 @@ const SelectedCoin = ({ selectACoin, selectBCoin }) => {
           <div className="img-price">
             <img className="a-img" src={a.image} alt="crypto a" />
             <h1 className="coin-prices">
-              ${price.toFixed(2)}
+              {price.toFixed(2) !== "0.00"
+                ? "$" + price.toFixed(2)
+                : "$" + price.toFixed(3)}
+
               <span
                 className={
                   percentage >= 0 ? "percent positive" : "percent negative"
@@ -50,7 +62,6 @@ const SelectedCoin = ({ selectACoin, selectBCoin }) => {
               alt="crypto a"
             />{" "}
           </div>
-          {/* <p className="coin-marketcap">${a.market_cap.toLocaleString()}</p> */}
         </div>
       ) : (
         ""

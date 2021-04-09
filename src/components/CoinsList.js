@@ -25,6 +25,7 @@ const CoinsList = ({
     )
       return coin;
   });
+  console.log(filteredCoins);
 
   //useeffects
   //set filtered coins when input is changed
@@ -35,7 +36,7 @@ const CoinsList = ({
   //when keyPress is changed - scroll to html element selected
   useEffect(() => {
     //only try scroll if coins in list exists
-    if (filteredCoins.length) {
+    if (filteredCoins.length === true) {
       refCurrentCoin.current.childNodes[nr].scrollIntoView({
         behavior: "smooth",
         block: "center",

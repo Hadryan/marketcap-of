@@ -19,8 +19,8 @@ const Homepage = () => {
   const [searchB, setSearchB] = useState("");
   const [displayAList, setDisplayAList] = useState(false);
   const [displayBList, setDisplayBList] = useState(false);
-  const [filteredCoinsA, setFilteredCoinsA] = useState({});
-  const [filteredCoinsB, setFilteredCoinsB] = useState({});
+  const [filteredCoinsA, setFilteredCoinsA] = useState([]);
+  const [filteredCoinsB, setFilteredCoinsB] = useState([]);
   const [selectNr, setSelectNr] = useState(0);
   const [selectACoin, setSelectACoin] = useState({});
   const [selectBCoin, setSelectBCoin] = useState({});
@@ -37,7 +37,6 @@ const Homepage = () => {
       .catch((error) => console.log(error));
     // }, 4000);
   }, []);
-  console.log(mouseMove);
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });
@@ -125,7 +124,12 @@ const Homepage = () => {
         )}
       </div>
       <div className="selectedCoin-div">
-        <SelectedCoin selectACoin={selectACoin} selectBCoin={selectBCoin} />
+        <SelectedCoin
+          selectACoin={selectACoin}
+          selectBCoin={selectBCoin}
+          displayAList={displayAList}
+          displayBList={displayBList}
+        />
       </div>
     </div>
   );

@@ -6,7 +6,8 @@
   overflow-x: hidden;
   margin-bottom: 20px;
   width: 320px;
-  position: relative;
+  position: absolute;
+  z-index: 1;
 }
 .coins-container::-webkit-scrollbar {
   width: 10px;
