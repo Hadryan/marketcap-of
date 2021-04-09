@@ -25,7 +25,6 @@ const CoinsList = ({
     )
       return coin;
   });
-  console.log(filteredCoins);
 
   //useeffects
   //set filtered coins when input is changed
@@ -36,7 +35,7 @@ const CoinsList = ({
   //when keyPress is changed - scroll to html element selected
   useEffect(() => {
     //only try scroll if coins in list exists
-    if (filteredCoins.length === true) {
+    if (filteredCoins.length) {
       refCurrentCoin.current.childNodes[nr].scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -64,6 +63,7 @@ const CoinsList = ({
         filteredCoins.map((coin, index) => {
           return (
             <Coin
+              coins={coins}
               nr={nr}
               setNr={setNr}
               mouseMove={mouseMove}
@@ -86,13 +86,14 @@ const CoinsList = ({
         //else
         <p>Loading...</p>
       )}
-      {nr < filteredCoins.length - 3 ? (
-        <div className="icon-div" onMouseDown={handleMouseDown}>
-          <FontAwesomeIcon className="down" icon={faAngleDoubleDown} />
-        </div>
-      ) : (
+
+      {/* {nr < filteredCoins.length - 3 ? ( */}
+      <div className="icon-div" onMouseDown={handleMouseDown}>
+        <FontAwesomeIcon className="down" icon={faAngleDoubleDown} />
+      </div>
+      {/* ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 };

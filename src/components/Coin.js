@@ -16,6 +16,7 @@ const Coin = ({
   setNr,
   filteredCoins,
   mouseMove,
+  coins,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -33,7 +34,6 @@ const Coin = ({
       setNr(index);
     }
   };
-
   return (
     <div
       className="coin-container"
@@ -43,7 +43,7 @@ const Coin = ({
       <div
         className={
           //to get the color on selected coin
-          name.length === true && name === filteredCoins[nr].name
+          name === filteredCoins[nr].name
             ? "coin-row selected-dropdown"
             : "coin-row"
         }
