@@ -15,7 +15,7 @@ const Coin = ({
   nr,
   setNr,
   filteredCoins,
-  refProp,
+  mouseMove,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -28,14 +28,16 @@ const Coin = ({
   };
   //to change position of dropdown selector
   const mouseOverHandler = () => {
-    setNr(index);
+    //only set nr if mouse is in use
+    if (mouseMove === true) {
+      setNr(index);
+    }
   };
   return (
     <div
       className="coin-container"
       onClick={clickHandler}
       onMouseOver={mouseOverHandler}
-      ref={refProp}
     >
       <div
         className={

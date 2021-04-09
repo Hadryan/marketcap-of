@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import "../styles/Search.css";
 const Search = ({
-  refProp,
   setSearch,
   search,
   searchName,
@@ -11,6 +10,8 @@ const Search = ({
   setSelectCoin,
   nr,
   setNr,
+  setKeyPress,
+  setMouseMove,
 }) => {
   const ref = useRef();
   const handleChange = (e) => {
@@ -35,11 +36,12 @@ const Search = ({
   const handleBlur = () => {
     setNr(0);
   };
+  //function for changing dropdown nr when pressing down or up key
   const handleKeyDown = (e) => {
-    refProp.current.childNodes[nr].scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
+    //for useEffect for scroll @CoinList
+    setKeyPress(true);
+    //for pointer not to integrate with list
+    setMouseMove(false);
     switch (e.keyCode) {
       case 40: //down
         if (nr != filteredCoins.length - 1) {
@@ -52,6 +54,9 @@ const Search = ({
         }
         break;
     }
+  };
+  const handleKeyUp = () => {
+    setKeyPress(false);
   };
   return (
     <div className="coin-search">
@@ -68,6 +73,7 @@ const Search = ({
           onClick={handleClick}
           ref={ref}
           onKeyDown={handleKeyDown}
+          onKeyUp={handleKeyUp}
           onBlur={handleBlur}
           // onFocus={handleFocus}
         />

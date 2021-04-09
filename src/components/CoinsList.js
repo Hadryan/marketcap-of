@@ -5,16 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 
 const CoinsList = ({
-  refProp,
   search,
   coins,
   setSelectCoin,
   setDisplay,
-  display,
   setSearch,
   setFilteredCoins,
   setNr,
   nr,
+  keyPress,
+  mouseMove,
 }) => {
   //filter coins to what the current search value is
   const filteredCoins = coins.filter((coin) => {
@@ -24,25 +24,26 @@ const CoinsList = ({
     )
       return coin;
   });
+
   //useeffects
   //set filtered coins when input is changed
   useEffect(() => {
     setFilteredCoins(filteredCoins);
   }, [search]);
-  //when dropdown select number is changed - scroll to html element selected
-  // const handleKeyDown = (e) =>{
-  // if(e.keyCode)
-  // refCurrentCoin.current.childNodes[nr].scrollIntoView({
-  //   behavior: "smooth",
-  //   block: "end",
-  // });
-  // }
 
-  const scrollHandler = () => {
-    console.log("scrolling");
-  };
+  //when keyPress is changed - scroll to html element selected
+  useEffect(() => {
+    refCurrentCoin.current.childNodes[nr].scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }, [keyPress]);
+
+  //ref for current coin in list
+  const refCurrentCoin = useRef(null);
+
   return (
-    <div className="coins-container" onScroll={scrollHandler} ref={refProp}>
+    <div className="coins-container" ref={refCurrentCoin}>
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
         filteredCoins.map((coin, index) => {
@@ -50,6 +51,7 @@ const CoinsList = ({
             <Coin
               nr={nr}
               setNr={setNr}
+              mouseMove={mouseMove}
               filteredCoins={filteredCoins}
               setSearch={setSearch}
               setSelectCoin={setSelectCoin}

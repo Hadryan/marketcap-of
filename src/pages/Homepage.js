@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 //api
 import { apiUrl } from "../api";
 //fetch
@@ -24,6 +24,8 @@ const Homepage = () => {
   const [selectNr, setSelectNr] = useState(0);
   const [selectACoin, setSelectACoin] = useState({});
   const [selectBCoin, setSelectBCoin] = useState({});
+  const [keyPress, setKeyPress] = useState(false);
+  const [mouseMove, setMouseMove] = useState(false);
 
   useEffect(() => {
     // setTimeout(() => {
@@ -35,18 +37,19 @@ const Homepage = () => {
       .catch((error) => console.log(error));
     // }, 4000);
   }, []);
-
+  console.log(mouseMove);
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });
   const bRef = useClickOutside(() => {
     setDisplayBList(false);
   });
-  //lifted up from CoinList
-  const refCurrentCoin = useRef(null);
-
+  //handler
+  const handleMouseMove = () => {
+    setMouseMove(true);
+  };
   return (
-    <div className="homepage">
+    <div className="homepage" onMouseMove={handleMouseMove}>
       <div className="title">
         <h1>
           Show the value of <span className="span-A">A</span> <br />
@@ -56,7 +59,6 @@ const Homepage = () => {
       </div>
       <div className="search-list-container" ref={aRef}>
         <Search
-          refProp={refCurrentCoin}
           setSearch={setSearchA}
           search={searchA}
           searchName="A"
@@ -66,10 +68,11 @@ const Homepage = () => {
           filteredCoins={filteredCoinsA}
           nr={selectNr}
           setNr={setSelectNr}
+          setKeyPress={setKeyPress}
+          setMouseMove={setMouseMove}
         />
         {displayAList ? (
           <CoinsList
-            refProp={refCurrentCoin}
             coins={coins}
             search={searchA}
             setSelectCoin={setSelectACoin}
@@ -79,6 +82,8 @@ const Homepage = () => {
             setFilteredCoins={setFilteredCoinsA}
             setNr={setSelectNr}
             nr={selectNr}
+            keyPress={keyPress}
+            mouseMove={mouseMove}
           />
         ) : (
           ""
@@ -87,7 +92,6 @@ const Homepage = () => {
 
       <div className="search-list-container" ref={bRef}>
         <Search
-          refProp={refCurrentCoin}
           setSearch={setSearchB}
           search={searchB}
           searchName="B"
@@ -97,10 +101,11 @@ const Homepage = () => {
           filteredCoins={filteredCoinsB}
           setNr={setSelectNr}
           nr={selectNr}
+          setKeyPress={setKeyPress}
+          setMouseMove={setMouseMove}
         />
         {displayBList ? (
           <CoinsList
-            refProp={refCurrentCoin}
             coins={coins}
             search={searchB}
             setSelectCoin={setSelectBCoin}
@@ -110,6 +115,8 @@ const Homepage = () => {
             setFilteredCoins={setFilteredCoinsB}
             setNr={setSelectNr}
             nr={selectNr}
+            keyPress={keyPress}
+            mouseMove={mouseMove}
           />
         ) : (
           ""

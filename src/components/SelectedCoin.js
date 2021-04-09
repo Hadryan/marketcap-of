@@ -1,5 +1,4 @@
 import React from "react";
-import Coin from "./Coin";
 //styles
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
