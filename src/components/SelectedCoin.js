@@ -27,10 +27,8 @@ const SelectedCoin = ({
           <div className="img-price">
             <img className="a-img" src={a.image} alt="crypto a" />
             <h1 className="coin-prices">
-              {price.toFixed(2) !== "0.00"
-                ? "$" + price.toFixed(2)
-                : "$" + price.toFixed(3)}
-
+              {/* Show only 2 decimals if price is over 0.1 */}
+              {price > 0.1 ? "$" + price.toFixed(2) : "$" + price.toFixed(4)}
               <span
                 className={
                   percentage >= 0 ? "percent positive" : "percent negative"
