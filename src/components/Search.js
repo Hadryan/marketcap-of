@@ -1,19 +1,31 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import SelectedCoinInSearch from "./SelectedCoinInSearch";
 import "../styles/Search.css";
 const Search = ({
   setSearch,
   search,
   searchName,
   setDisplay,
+  display,
   placeholder,
   filteredCoins,
   setSelectCoin,
+  selectCoin,
   nr,
   setNr,
   setKeyPress,
   setMouseMove,
 }) => {
+  //ref
   const ref = useRef();
+
+  //if display is not shown and there is a selected coin. To not have some undefined written text under the Element in search
+  useEffect(() => {
+    if (!display && Object.keys(selectCoin).length) {
+      setSearch("");
+    }
+  }, [display]);
+  //handlers
   const handleChange = (e) => {
     setSearch(e.target.value);
     setDisplay(true);
@@ -26,7 +38,7 @@ const Search = ({
     e.preventDefault();
     if (filteredCoins[nr]) {
       setSelectCoin(filteredCoins[nr]);
-      setSearch(filteredCoins[nr].name);
+      setSearch("");
       setDisplay(false);
       // e.target.querySelector("input").blur(); would do the same.
       ref.current.blur();
@@ -58,25 +70,43 @@ const Search = ({
   const handleKeyUp = () => {
     setKeyPress(false);
   };
+
   return (
     <div className="coin-search">
       <h1 className="coin-text">
         Select <span className={"span-" + searchName}>{searchName}</span>
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form className="search-form" onSubmit={handleSubmit}>
         <input
           className="coin-input"
           type="text"
           value={search}
-          placeholder={placeholder}
           onChange={handleChange}
           onClick={handleClick}
-          ref={ref}
           onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           onBlur={handleBlur}
-          // onFocus={handleFocus}
+          ref={ref}
+          //show placeholder if there isnt a selected coin or display is shown
+          {...(Object.keys(selectCoin).length === 0 || display
+            ? (placeholder = { placeholder })
+            : "")}
         />
+        {
+          //only print out the component if there is a selected coin and display is not true
+          Object.keys(selectCoin).length && !display ? (
+            <div className="selected-coin-in-search-container">
+              <SelectedCoinInSearch
+                selectCoin={selectCoin}
+                refProp={ref}
+                setDisplay={setDisplay}
+                search={search}
+              />
+            </div>
+          ) : (
+            ""
+          )
+        }
       </form>
     </div>
   );

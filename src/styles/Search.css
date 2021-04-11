@@ -10,6 +10,16 @@
   margin-bottom: 10px;
   text-align: center;
 }
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.selected-coin-in-search-container {
+  position: absolute;
+  background-color: transparent;
+}
 .coin-input {
   padding-left: 16px;
   width: 320px;
@@ -37,6 +47,7 @@
     height: 40px;
   }
 }
+
 @media (max-width: 555px) {
   .coin-text {
     font-size: 1.5rem;

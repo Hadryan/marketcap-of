@@ -16,14 +16,13 @@ const Coin = ({
   setNr,
   filteredCoins,
   mouseMove,
-  coins,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
     //if coinElement is defined
     if (coinElement) {
       setSelectCoin(coinElement);
-      setSearch(name);
+      setSearch("");
       setDisplay(false);
     }
   };

@@ -27,12 +27,19 @@ const Homepage = () => {
   const [keyPress, setKeyPress] = useState(false);
   const [mouseMove, setMouseMove] = useState(false);
 
+  //fetch all coins
   useEffect(() => {
     // setTimeout(() => {
     axios
       .get(api)
       .then((res) => {
-        setCoins(res.data);
+        const data = res.data.filter(
+          (coin) =>
+            //quickfix to get away the common stable coins
+            !coin.name.toLowerCase().includes("usd") &&
+            !coin.symbol.toLowerCase().includes("usd")
+        );
+        setCoins(data);
       })
       .catch((error) => console.log(error));
     // }, 4000);
@@ -62,8 +69,10 @@ const Homepage = () => {
           search={searchA}
           searchName="A"
           setDisplay={setDisplayAList}
+          display={displayAList}
           placeholder="e.g Ethereum"
           setSelectCoin={setSelectACoin}
+          selectCoin={selectACoin}
           filteredCoins={filteredCoinsA}
           nr={selectNr}
           setNr={setSelectNr}
@@ -96,8 +105,10 @@ const Homepage = () => {
           search={searchB}
           searchName="B"
           setDisplay={setDisplayBList}
+          display={displayBList}
           placeholder="e.g Bitcoin"
           setSelectCoin={setSelectBCoin}
+          selectCoin={selectBCoin}
           filteredCoins={filteredCoinsB}
           setNr={setSelectNr}
           nr={selectNr}
