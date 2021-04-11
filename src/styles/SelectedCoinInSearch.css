@@ -1,12 +1,14 @@
 .container {
+  position: relative;
+  width: 12.5rem;
   margin-left: 0.75rem;
   border-radius: 6px;
   padding: 0.5rem;
-  background: rgba(27, 27, 110, 0.664);
+  background: rgba(27, 27, 110, 0.185);
   display: flex;
   align-items: center;
   border: 0.5px solid rgba(70, 70, 70, 0.459);
-  box-shadow: rgba(32, 32, 32, 0.459) 1px 1px 2px 1px;
+  box-shadow: rgba(32, 32, 32, 0.459) 1px 1px 3px 1px;
   cursor: default;
 }
 
@@ -28,13 +30,16 @@ img {
   margin-right: 0.2rem;
 }
 .fa-times {
+  position: absolute;
   background: transparent;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  right: 0.55rem;
 }
 
 @media (max-width: 800px) {
   .container {
+    width: 11rem;
     padding: 0.3rem;
     margin-left: 0.5rem;
   }
