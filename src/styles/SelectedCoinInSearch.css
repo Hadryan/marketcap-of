@@ -10,11 +10,20 @@
   border: 0.5px solid rgba(70, 70, 70, 0.459);
   box-shadow: rgba(32, 32, 32, 0.459) 1px 1px 3px 1px;
   cursor: default;
+  /* To make all text unselectable */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Opera and Firefox */
 }
 
 h3 {
   background: transparent;
   margin-right: 0.35rem;
+  color: white;
 }
 .price {
   color: rgb(235, 226, 253);
@@ -36,6 +45,7 @@ img {
   font-size: 1.7rem;
   cursor: pointer;
   right: 0.85rem;
+  color: whitesmoke;
 }
 
 @media (max-width: 800px) {

@@ -9,6 +9,7 @@ import "../styles/Homepage.css";
 import Search from "../components/Search";
 import CoinsList from "../components/CoinsList";
 import SelectedCoin from "../components/SelectedCoin";
+import Swap from "../components/Swap";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 
@@ -98,7 +99,12 @@ const Homepage = () => {
           ""
         )}
       </div>
-
+      <Swap
+        setSelectACoin={setSelectACoin}
+        setSelectBCoin={setSelectBCoin}
+        selectACoin={selectACoin}
+        selectBCoin={selectBCoin}
+      />
       <div className="search-list-container" ref={bRef}>
         <Search
           setSearch={setSearchB}

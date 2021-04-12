@@ -95,6 +95,9 @@
 .negative {
   color: #ea3943;
 }
+h2 {
+  color: white;
+}
 @media (max-width: 800px) {
   .coin-prices {
     font-size: 2.5rem;

@@ -9,6 +9,7 @@
   font-size: 2rem;
   margin-bottom: 10px;
   text-align: center;
+  color: white;
 }
 .search-form {
   position: relative;
@@ -40,6 +41,7 @@
 ::placeholder {
   color: rgba(255, 255, 255, 0.658);
 }
+
 @media (max-width: 800px) {
   .coin-text {
     font-size: 1.75rem;

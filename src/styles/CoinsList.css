@@ -20,6 +20,10 @@
 }
 p {
   text-align: center;
+  color: white;
+}
+h1 {
+  color: white;
 }
 .icon-div {
   position: sticky;
@@ -27,6 +31,7 @@ p {
   text-align: center;
   opacity: 50%;
 }
+
 @media (max-width: 800px) {
   .coins-container {
     width: 250px;

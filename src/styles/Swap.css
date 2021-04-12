@@ -1,0 +1,31 @@
+.swap {
+  position: absolute;
+  top: 15.5rem;
+  cursor: pointer;
+}
+.icon {
+  font-size: 2rem;
+  color: rgb(224, 197, 255);
+}
+
+@media (max-width: 800px) {
+  .swap {
+    top: 9.3rem;
+  }
+}
+@media (max-width: 555px) {
+  .faExchangeAlt {
+    transform: scaleX(0.8);
+  }
+  .swap {
+    position: absolute;
+    margin-left: 16rem;
+    top: 15.25rem;
+    transform: rotate(90deg);
+  }
+}
+@media (max-width: 360px) {
+  .swap {
+    top: 13.65rem;
+  }
+}
