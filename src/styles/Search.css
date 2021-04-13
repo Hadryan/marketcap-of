@@ -4,6 +4,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* To make all text unselectable */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently*/
+  -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
 .coin-text {
   font-size: 2rem;
@@ -37,6 +45,7 @@
   );
   color: #e2e2e2;
   font-size: 1rem;
+  outline: none;
 }
 ::placeholder {
   color: rgba(255, 255, 255, 0.658);

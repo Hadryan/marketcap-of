@@ -4,11 +4,10 @@
   position: relative;
   border-radius: 6px;
   padding: 0.5rem;
-  background: rgba(27, 27, 110, 0.24);
+  background: #212436e0;
   display: flex;
   align-items: center;
-  border: 0.5px solid rgba(70, 70, 70, 0.459);
-  box-shadow: rgba(32, 32, 32, 0.459) 1px 1px 3px 1px;
+  border: 1px solid #cfc3ff5e;
   cursor: default;
   /* To make all text unselectable */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -16,17 +15,17 @@
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
-                                supported by Chrome, Opera and Firefox */
+  user-select: none; /* Non-prefixed version, currently*/
+  -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
 
-h3 {
+h4 {
   background: transparent;
   margin-right: 0.35rem;
-  color: white;
+  color: rgb(237, 223, 255);
 }
 .price {
-  color: rgb(235, 226, 253);
+  color: rgb(237, 223, 255);
 }
 span {
   color: #5306fc;
@@ -45,16 +44,16 @@ img {
   font-size: 1.7rem;
   cursor: pointer;
   right: 0.85rem;
-  color: whitesmoke;
+  color: rgb(207, 195, 255);
 }
 
 @media (max-width: 800px) {
-  h3 {
-    font-size: 1rem;
+  h4 {
+    font-size: 0.9rem;
   }
   img {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.15rem;
+    height: 1.15rem;
   }
   .fa-times {
     font-size: 1.4rem;

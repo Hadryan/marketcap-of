@@ -2,10 +2,18 @@
   position: absolute;
   top: 15.5rem;
   cursor: pointer;
+  /* To make all text unselectable */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently*/
+  -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
 .icon {
   font-size: 2rem;
-  color: rgb(224, 197, 255);
+  color: #cfc3ff;
 }
 
 @media (max-width: 800px) {
@@ -20,12 +28,12 @@
   .swap {
     position: absolute;
     margin-left: 16rem;
-    top: 15.25rem;
+    top: 13.5rem;
     transform: rotate(90deg);
   }
 }
 @media (max-width: 360px) {
   .swap {
-    top: 13.65rem;
+    top: 13rem;
   }
 }

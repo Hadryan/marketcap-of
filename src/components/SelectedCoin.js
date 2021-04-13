@@ -41,11 +41,11 @@ const SelectedCoin = ({
           {/* here is the grid of market caps */}
           <div className="text-div">
             <h2 className="market-cap-title">Market cap</h2>
-            <h2 className="first-text">{a.symbol.toUpperCase()}: </h2>
+            {/* <h2 className="first-text">{a.symbol.toUpperCase()}: </h2> */}
             <h2 className="first-text first-mcap">
               ${a.market_cap.toLocaleString()}
             </h2>
-            <h2 className="second-text">{b.symbol.toUpperCase()}: </h2>
+            {/* <h2 className="second-text">{b.symbol.toUpperCase()}: </h2> */}
             <h2 className="second-text second-mcap">
               ${b.market_cap.toLocaleString()}
             </h2>

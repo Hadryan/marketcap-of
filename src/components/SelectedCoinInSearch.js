@@ -14,8 +14,8 @@ const SelectedCoinInSearch = ({ selectCoin, refProp, setDisplay, search }) => {
   return (
     <div className="container">
       <img src={selectCoin.image} alt="img-a" />
-      <h3 className="symbol">{selectCoin.symbol.toUpperCase()}</h3>
-      <h3 className="price">${selectCoin.current_price}</h3>
+      <h4 className="symbol">{selectCoin.symbol.toUpperCase()}</h4>
+      <h4 className="price">${selectCoin.current_price}</h4>
       <FontAwesomeIcon
         className="fa-times"
         icon={faTimesCircle}
