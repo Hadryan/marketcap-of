@@ -19,12 +19,6 @@ const Search = ({
   //ref
   const ref = useRef();
 
-  //if display is not shown and there is a selected coin. To not have some undefined written text under the Element in search
-  useEffect(() => {
-    if (!display && Object.keys(selectCoin).length) {
-      setSearch("");
-    }
-  }, [display]);
   //handlers
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -70,7 +64,13 @@ const Search = ({
   const handleKeyUp = () => {
     setKeyPress(false);
   };
-
+  //effects
+  //if display is not shown and there is a selected coin. To not have some undefined written text under the Element in search
+  useEffect(() => {
+    if (!display && Object.keys(selectCoin).length) {
+      setSearch("");
+    }
+  }, [display]);
   return (
     <div className="coin-search">
       <h1 className="coin-text">
@@ -97,10 +97,8 @@ const Search = ({
           Object.keys(selectCoin).length && !display ? (
             <div className="selected-coin-in-search-container">
               <SelectedCoinInSearch
+                setSelectCoin={setSelectCoin}
                 selectCoin={selectCoin}
-                refProp={ref}
-                setDisplay={setDisplay}
-                search={search}
               />
             </div>
           ) : (
