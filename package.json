@@ -1,6 +1,6 @@
 {
-  "homepage": "http://emilneander.github.io/marketcap-of",
-  "name": "with-market-cap-of",
+  "homepage": "http://www.marketcapof.com",
+  "name": "marketcap-of",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
