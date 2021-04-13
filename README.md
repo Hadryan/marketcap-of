@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://emilneander.github.io/marketcap-of/">Market cap of</a></h1>
+<h1 align="center"><a href="https://www.marketcapof.com/">Market cap of</a></h1>
   <h3 align="center">
    My crypto Web App project. The idea is to show what value a crypto coin would have if it had another coin's market cap.
 </h3>
@@ -45,7 +45,7 @@
 
 ### Try It
 
-- [https://emilneander.github.io/marketcap-of/](https://emilneander.github.io/marketcap-of/)
+- [www.marketcapof.com](https://www.marketcapof.com)
 <!-- GETTING STARTED -->
 
 ## Getting Started
