@@ -31,7 +31,8 @@
 
 ## About The Project
 
-![marketcap-of-v1 0](https://user-images.githubusercontent.com/73109435/114401555-51d7be00-9ba3-11eb-9d85-372abfd609a2.PNG)
+![marketcap-of-v1 1](https://user-images.githubusercontent.com/73109435/114515322-864b8880-9c3c-11eb-96c6-3ea1f893407b.PNG)
+
 
 
 ### Built With
