@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 //api
-import { apiUrl } from "../api";
+import { apiUrl, getCoinById } from "../api";
 //fetch
 import axios from "axios";
 //style
@@ -40,11 +40,18 @@ const Homepage = () => {
             !coin.name.toLowerCase().includes("usd") &&
             !coin.symbol.toLowerCase().includes("usd")
         );
+        getCoinById("safe-haven").then((result) => {
+          data.push(result[0]);
+        });
+        getCoinById("oceanex-token").then((result) => {
+          data.push(result[0]);
+        });
         setCoins(data);
       })
       .catch((error) => console.log(error));
     // }, 4000);
   }, []);
+
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });
