@@ -1,4 +1,6 @@
 import React from "react";
+//component
+import InfoBox from "./InfoBox";
 //styles
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
@@ -40,7 +42,10 @@ const SelectedCoin = ({
           </div>
           {/* here is the grid of market caps */}
           <div className="text-div">
-            <h2 className="market-cap-title">Market cap</h2>
+            <h2 className="market-cap-title">
+              Market cap
+              <InfoBox selectACoin={selectACoin} />
+            </h2>
             {/* <h2 className="first-text">{a.symbol.toUpperCase()}: </h2> */}
             <h2 className="first-text first-mcap">
               ${a.market_cap.toLocaleString()}

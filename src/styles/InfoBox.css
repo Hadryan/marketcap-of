@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@keyframes opacity {
+  from {
+    background-color: #3b384b;
+  }
+  to {
+    background-color: #b0a7dd;
+  }
+}
+.info-container {
+  /* grid-row: 1/2;
+  grid-column: 5/6; */
+  display: inline;
+}
+.content {
+  width: 40rem;
+  border-radius: 7px;
+  display: none;
+  position: absolute;
+  top: 21.5rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #b0a7dd;
+}
+.content > p {
+  font-family: "Quicksand", sans-serif;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-align: center;
+  padding: 0.5rem;
+}
+.question-icon {
+  font-size: 1.5rem;
+  color: #cfc3ff;
+  text-align: center;
+  margin-left: 0.25rem;
+}
+.visible {
+  display: flex;
+  justify-items: center;
+  align-self: center;
+  animation-name: opacity;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+}
+
+@media (max-width: 800px) {
+  .content {
+    top: 18rem;
+    width: 34rem;
+  }
+  .content > p {
+    font-size: 1.35rem;
+  }
+}
+@media (max-width: 555px) {
+  .content {
+    top: 20rem;
+    width: 22rem;
+  }
+  .content > p {
+    font-size: 1rem;
+  }
+  .question-icon {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 360px) {
+  .content {
+    top: 19.5rem;
+    width: 18rem;
+  }
+  .content > p {
+    font-size: 0.9rem;
+  }
+}
