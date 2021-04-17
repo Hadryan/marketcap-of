@@ -6,7 +6,7 @@ import iconHand from "../img/hand.svg";
 //json
 import supportedCoins from "../donation/supported-coins.json";
 
-const Footer = ({ selectACoin, coins }) => {
+const Footer = ({ selectACoin, selectBCoin, coins }) => {
   //to use the coins objects but only the ones that matches the name from my custom Json
   const coinsSupported = coins.filter((coin) => {
     const supported = !coin.name.includes(
@@ -16,8 +16,10 @@ const Footer = ({ selectACoin, coins }) => {
     );
     return supported;
   });
+  const coinAreSelected =
+    Object.keys(selectACoin).length && Object.keys(selectBCoin).length;
   return (
-    <footer>
+    <footer className={coinAreSelected ? "footer footer-selected" : "footer"}>
       <hr />
       <div className="social-icon-row">
         <ul className="social-icons">

@@ -158,7 +158,12 @@ const Homepage = () => {
         />
       </div>
 
-      <Footer selectACoin={selectACoin} coins={coins} />
+      <Footer
+        className="footi"
+        selectACoin={selectACoin}
+        selectBCoin={selectBCoin}
+        coins={coins}
+      />
     </div>
   );
 };
