@@ -46,6 +46,9 @@ hr {
   align-items: center;
   justify-content: center;
 }
+.btn:hover {
+  background: #363957;
+}
 .btn-hand {
   display: grid;
   grid-template-columns: 40% 60%;
