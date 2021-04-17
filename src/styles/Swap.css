@@ -1,6 +1,6 @@
 .swap {
   position: absolute;
-  top: 15.5rem;
+  top: 13.5rem;
   cursor: pointer;
   /* To make all text unselectable */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -21,8 +21,20 @@
     top: 9.3rem;
   }
 }
+@media (max-width: 572px) {
+  @media (max-height: 531px) {
+    .i-selected {
+      transform: scaleX(0.8);
+    }
+    .s-selected {
+      top: 15rem;
+      margin-left: 16rem;
+      transform: rotate(90deg);
+    }
+  }
+}
 @media (max-width: 555px) {
-  .faExchangeAlt {
+  .icon {
     transform: scaleX(0.8);
   }
   .swap {

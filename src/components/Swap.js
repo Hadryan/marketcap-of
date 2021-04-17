@@ -11,9 +11,19 @@ const Swap = ({ setSelectACoin, setSelectBCoin, selectACoin, selectBCoin }) => {
     setSelectBCoin(selectACoin);
   };
   return (
-    <div className="swap">
+    <div
+      className={
+        Object.keys(selectACoin).length && Object.keys(selectBCoin).length
+          ? "swap s-selected"
+          : "swap"
+      }
+    >
       <FontAwesomeIcon
-        className="icon faExchangeAlt"
+        className={
+          Object.keys(selectACoin).length && Object.keys(selectBCoin).length
+            ? "icon faExchangeAlt i-selected"
+            : "icon faExchangeAlt"
+        }
         icon={faExchangeAlt}
         onClick={handleClick}
       />

@@ -1,0 +1,102 @@
+footer {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  bottom: 0px;
+  position: absolute;
+}
+hr {
+  margin: 1rem 0 1rem 0;
+  width: 85%;
+  text-align: center;
+  opacity: 0.4;
+}
+.copyright-text {
+  margin: 1rem 0 1rem 0;
+  opacity: 0.7;
+}
+.social-icon-row {
+  width: 100%;
+  height: 3.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons > li {
+  display: flex;
+  margin: 0 1rem 0 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  background: #26283d;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-hand {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 50% 50%;
+  border: none;
+  width: 9rem;
+  border-radius: 10px;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+.fa {
+  color: #979ca9;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+.icon-hand {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  justify-self: center;
+  align-self: start;
+  width: 2.25rem;
+  height: 1.25rem;
+}
+.coin-over-hand {
+  width: 1.15rem;
+  height: 1.15rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-self: center;
+  align-self: end;
+  opacity: 0.8;
+}
+.donate-text {
+  background-color: transparent;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  justify-self: start;
+  align-self: center;
+  font-size: 1.25rem;
+  color: #a4aabb;
+  font-weight: bold;
+}
+
+@media (max-width: 555px) {
+  .copyright-text {
+    font-size: 0.8rem;
+  }
+}
+@media (max-height: 650px) {
+  footer {
+    position: relative;
+  }
+}

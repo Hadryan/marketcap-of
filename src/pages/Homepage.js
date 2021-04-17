@@ -10,6 +10,7 @@ import Search from "../components/Search";
 import CoinsList from "../components/CoinsList";
 import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
+import Footer from "../components/Footer";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 
@@ -106,6 +107,7 @@ const Homepage = () => {
           ""
         )}
       </div>
+
       <Swap
         setSelectACoin={setSelectACoin}
         setSelectBCoin={setSelectBCoin}
@@ -155,6 +157,8 @@ const Homepage = () => {
           displayBList={displayBList}
         />
       </div>
+
+      <Footer selectACoin={selectACoin} coins={coins} />
     </div>
   );
 };

@@ -1,0 +1,202 @@
+[
+    {
+        "name": "Bitcoin",
+        "address": "1LNMXB8YyJDHSWKPv8bQinuLcAoJPH8ha1",
+        "network": "Bitcoin(BTC)",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Ethereum",
+        "address": "0xb6d0af59d2a4defdc7a15d183fea804d29727ac5",
+        "network": "ERC20",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "USDT",
+        "address": "0xb6d0af59d2a4defdc7a15d183fea804d29727ac5",
+        "network": "ERC20",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "XRP",
+        "address": "rEb8TK3gBgk5auZkwc6sHnwrGVJH8DuaLh",
+        "network": "XRP",
+        "tag": 103806537,
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Binance Coin",
+        "address": "bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23",
+        "network": "BEP2",
+        "tag": " ",
+        "memo": 107231562,
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Cardano",
+        "address": "DdzFFzCqrht3ar2iidpSEYsCM3bfVCDTZqAiTyMRTiSSJ61mwJLRG86QuTQUxNSMx1GByp8gPHxVN1QCBPqA5DcwByZzCvYPErBbdQzn",
+        "network": "Cardano",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Polkadot",
+        "address": "12LLeScat1kcLt6FfjS1mq6g4WoUdSEXd43ub2AD9Un5JvVD",
+        "network": "DOT",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Dogecoin",
+        "address": "DH8JhrUg7KLAGHWfEwcssFX6uD32AnTVe5",
+        "network": "dogecoin",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Litecoin",
+        "address": "LPqzTnn74vcaE8CABopn4HREDz7kPYJJzx",
+        "network": "LTC",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Uniswap",
+        "address": "0xb6d0af59d2a4defdc7a15d183fea804d29727ac5",
+        "network": "ERC20",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Chainlink",
+        "address": "0xb6d0af59d2a4defdc7a15d183fea804d29727ac5",
+        "network": "ERC20",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Bitcoin Cash",
+        "address": "1LNMXB8YyJDHSWKPv8bQinuLcAoJPH8ha1",
+        "network": "BCH",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Stellar",
+        "address": "GAHK7EEG2WWHVKDNT4CEQFZGKF2LGDSW2IVM4S5DP42RBW3K6BTODB4A",
+        "network": "Stellar",
+        "tag": " ",
+        "memo": 102498347,
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Filecoin",
+        "address": "f1nu5iiqww3fia3ve5fm5l2aoti7sidgwqs26kquy",
+        "network": "FIL",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Theta Network",
+        "address": "0xb6d0af59d2a4defdc7a15d183fea804d29727ac5",
+        "network": "Mainnet",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "VeChain",
+        "address": "0xb6d0af59d2a4defdc7a15d183fea804d29727ac5",
+        "network": "Mainnet",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "VeThor Token",
+        "address": "0xb6d0af59d2a4defdc7a15d183fea804d29727ac5",
+        "network": "Mainnet",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "TRON",
+        "address": "TUyr6TsjvAS4moNpBFGMDrLU8n5JhdF4zk",
+        "network": "TRC20",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "Monero",
+        "address": "87VNJGCxvCrZ9V2mHdWMsXgPQU7JBKEV67uYJvkdhDbBj871xhAVoB1P5vFnAFAuRbAcbg56XDDJcD6nfAwQLYE45vyDFfi",
+        "network": "Mainnet",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    },
+    {
+        "name": "NEO",
+        "address": "ATN9dXQ6atZ6CXXWLGC1kifyw3AxXNhvk5",
+        "network": "Mainnet",
+        "tag": " ",
+        "memo": " ",
+        "qraddress": ".",
+        "qrtag": ".",
+        "qrmemo": "."
+    }
+]

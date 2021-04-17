@@ -22,7 +22,7 @@ const SelectedCoin = ({
       //change opacity when display is true
       style={displayAList || displayBList ? { opacity: 0.25 } : { opacity: 1 }}
     >
-      {/* Only write out when there is a valid coin in both from and to */}
+      {/* Only write out when there is a valid coin in both a and b */}
       {Object.keys(a).length && Object.keys(b).length ? (
         //the actual selected coin to show "value" of
         <div className="selectedCoins-container">

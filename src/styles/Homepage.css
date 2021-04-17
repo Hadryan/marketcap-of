@@ -5,6 +5,7 @@
   align-items: flex-start;
   padding-top: 2rem;
   flex-wrap: wrap;
+  height: 100%;
 }
 
 .search-list-container {
@@ -17,8 +18,7 @@
 .title h1 {
   flex-basis: 100%;
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-size: 2rem;
   color: white;
 }
