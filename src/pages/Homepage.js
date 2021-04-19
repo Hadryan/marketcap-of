@@ -11,6 +11,7 @@ import CoinsList from "../components/CoinsList";
 import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
 import Footer from "../components/Footer";
+
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 

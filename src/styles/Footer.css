@@ -92,6 +92,9 @@ hr {
   color: #a4aabb;
   font-weight: bold;
 }
+.link {
+  text-decoration: none;
+}
 
 @media (max-width: 555px) {
   .copyright-text {
@@ -101,5 +104,24 @@ hr {
 @media (max-height: 650px) {
   .footer-selected {
     position: relative;
+  }
+}
+@media (max-width: 360px) {
+  .btn-hand {
+    height: 2.5rem;
+  }
+  .donate-text {
+    font-size: 1.15rem;
+  }
+  .coin-over-hand {
+    width: 1rem;
+    height: 1rem;
+  }
+  .btn-twitter {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .fa {
+    font-size: 1.35rem;
   }
 }

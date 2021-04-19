@@ -51,8 +51,11 @@
   }
 }
 @media (max-width: 360px) {
+  .homepage {
+    padding-top: 1rem;
+  }
   .title h1 {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 }

@@ -151,8 +151,11 @@ h2 {
   }
 }
 @media (max-width: 360px) {
+  .text-div {
+    margin-top: 1.5rem;
+  }
   .text-div h2 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   .coin-prices {
     font-size: 2rem;
