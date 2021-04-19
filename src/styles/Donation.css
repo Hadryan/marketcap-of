@@ -1,0 +1,68 @@
+.donation-page-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.donation-container {
+  background: linear-gradient(#6e5b91 0%, #3b344e 67.77%, #292636 100%);
+  border: 1px solid rgba(211, 194, 233, 0.123);
+  width: 18rem;
+  height: 33.5rem;
+  border-radius: 20px;
+  /* to make border look the same all around */
+  background-origin: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+header {
+  margin: 0.5rem;
+  text-align: center;
+  background-color: transparent;
+}
+.donation-title {
+  background-color: transparent;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+.donation-description {
+  color: #bcb6c9;
+  font-size: 0.8rem;
+  background-color: transparent;
+}
+.nav-donation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 100%;
+}
+.nav-donation > li {
+  display: inline;
+  background-color: #897ab1;
+  color: #bcb6c9;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 0.25rem 0 0.25rem 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.158);
+}
+.nav-donation > .send {
+  border: none;
+}
+.nav-donation > .method {
+  background-color: #36324b;
+}
+.donation-method {
+  margin-top: 1rem;
+  width: 90%;
+  height: 5rem;
+  background: rgba(30, 31, 44, 0.68);
+  border: 1px solid rgba(94, 86, 145, 0.85);
+}

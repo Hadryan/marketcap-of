@@ -9,7 +9,7 @@ import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div className="homepage-root">
       <Homepage />
     </div>
   );

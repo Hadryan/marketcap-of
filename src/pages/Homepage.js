@@ -65,100 +65,101 @@ const Homepage = () => {
     setMouseMove(true);
   };
   return (
-    <div className="homepage" onMouseMove={handleMouseMove}>
-      <div className="title">
-        <h1>
-          Show the value of <span className="span-A">A</span> <br />
-          with the market cap of
-          <span className="span-B"> B</span>
-        </h1>
-      </div>
-      <div className="search-list-container" ref={aRef}>
-        <Search
-          setSearch={setSearchA}
-          search={searchA}
-          searchName="A"
-          setDisplay={setDisplayAList}
-          display={displayAList}
-          placeholder="e.g Ethereum"
-          setSelectCoin={setSelectACoin}
-          selectCoin={selectACoin}
-          filteredCoins={filteredCoinsA}
-          nr={selectNr}
-          setNr={setSelectNr}
-          setKeyPress={setKeyPress}
-          setMouseMove={setMouseMove}
-        />
-        {displayAList ? (
-          <CoinsList
-            coins={coins}
-            search={searchA}
-            setSelectCoin={setSelectACoin}
-            display={displayAList}
-            setDisplay={setDisplayAList}
+    <div className="homepage-container">
+      <div className="homepage" onMouseMove={handleMouseMove}>
+        <div className="title">
+          <h1>
+            Show the value of <span className="span-A">A</span> <br />
+            with the market cap of
+            <span className="span-B"> B</span>
+          </h1>
+        </div>
+        <div className="search-list-container" ref={aRef}>
+          <Search
             setSearch={setSearchA}
-            setFilteredCoins={setFilteredCoinsA}
-            setNr={setSelectNr}
+            search={searchA}
+            searchName="A"
+            setDisplay={setDisplayAList}
+            display={displayAList}
+            placeholder="e.g Ethereum"
+            setSelectCoin={setSelectACoin}
+            selectCoin={selectACoin}
+            filteredCoins={filteredCoinsA}
             nr={selectNr}
-            keyPress={keyPress}
+            setNr={setSelectNr}
             setKeyPress={setKeyPress}
-            mouseMove={mouseMove}
+            setMouseMove={setMouseMove}
           />
-        ) : (
-          ""
-        )}
-      </div>
+          {displayAList ? (
+            <CoinsList
+              coins={coins}
+              search={searchA}
+              setSelectCoin={setSelectACoin}
+              display={displayAList}
+              setDisplay={setDisplayAList}
+              setSearch={setSearchA}
+              setFilteredCoins={setFilteredCoinsA}
+              setNr={setSelectNr}
+              nr={selectNr}
+              keyPress={keyPress}
+              setKeyPress={setKeyPress}
+              mouseMove={mouseMove}
+            />
+          ) : (
+            ""
+          )}
+        </div>
 
-      <Swap
-        setSelectACoin={setSelectACoin}
-        setSelectBCoin={setSelectBCoin}
-        selectACoin={selectACoin}
-        selectBCoin={selectBCoin}
-      />
-      <div className="search-list-container" ref={bRef}>
-        <Search
-          setSearch={setSearchB}
-          search={searchB}
-          searchName="B"
-          setDisplay={setDisplayBList}
-          display={displayBList}
-          placeholder="e.g Bitcoin"
-          setSelectCoin={setSelectBCoin}
-          selectCoin={selectBCoin}
-          filteredCoins={filteredCoinsB}
-          setNr={setSelectNr}
-          nr={selectNr}
-          setKeyPress={setKeyPress}
-          setMouseMove={setMouseMove}
-        />
-        {displayBList ? (
-          <CoinsList
-            coins={coins}
-            search={searchB}
-            setSelectCoin={setSelectBCoin}
-            setDisplay={setDisplayBList}
-            display={displayBList}
-            setSearch={setSearchB}
-            setFilteredCoins={setFilteredCoinsB}
-            setNr={setSelectNr}
-            nr={selectNr}
-            keyPress={keyPress}
-            setKeyPress={setKeyPress}
-            mouseMove={mouseMove}
-          />
-        ) : (
-          ""
-        )}
-      </div>
-      <div className="selectedCoin-div">
-        <SelectedCoin
+        <Swap
+          setSelectACoin={setSelectACoin}
+          setSelectBCoin={setSelectBCoin}
           selectACoin={selectACoin}
           selectBCoin={selectBCoin}
-          displayAList={displayAList}
-          displayBList={displayBList}
         />
+        <div className="search-list-container" ref={bRef}>
+          <Search
+            setSearch={setSearchB}
+            search={searchB}
+            searchName="B"
+            setDisplay={setDisplayBList}
+            display={displayBList}
+            placeholder="e.g Bitcoin"
+            setSelectCoin={setSelectBCoin}
+            selectCoin={selectBCoin}
+            filteredCoins={filteredCoinsB}
+            setNr={setSelectNr}
+            nr={selectNr}
+            setKeyPress={setKeyPress}
+            setMouseMove={setMouseMove}
+          />
+          {displayBList ? (
+            <CoinsList
+              coins={coins}
+              search={searchB}
+              setSelectCoin={setSelectBCoin}
+              setDisplay={setDisplayBList}
+              display={displayBList}
+              setSearch={setSearchB}
+              setFilteredCoins={setFilteredCoinsB}
+              setNr={setSelectNr}
+              nr={selectNr}
+              keyPress={keyPress}
+              setKeyPress={setKeyPress}
+              mouseMove={mouseMove}
+            />
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="selectedCoin-div">
+          <SelectedCoin
+            selectACoin={selectACoin}
+            selectBCoin={selectBCoin}
+            displayAList={displayAList}
+            displayBList={displayBList}
+          />
+        </div>
       </div>
-
       <Footer
         className="footi"
         selectACoin={selectACoin}

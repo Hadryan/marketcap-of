@@ -5,7 +5,7 @@
   justify-content: center;
   flex-direction: column;
   bottom: 0;
-  position: absolute;
+  position: relative;
 }
 hr {
   margin: 1rem 0 1rem 0;
@@ -95,17 +95,6 @@ hr {
 .link {
   text-decoration: none;
 }
-
-@media (max-width: 555px) {
-  .copyright-text {
-    font-size: 0.8rem;
-  }
-}
-@media (max-height: 650px) {
-  .footer-selected {
-    position: relative;
-  }
-}
 @media (max-width: 360px) {
   .btn-hand {
     height: 2.5rem;
@@ -123,5 +112,8 @@ hr {
   }
   .fa {
     font-size: 1.35rem;
+  }
+  .copyright-text {
+    font-size: 0.8rem;
   }
 }

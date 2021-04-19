@@ -1,6 +1,6 @@
 .swap {
   position: absolute;
-  top: 13.5rem;
+  top: 13.2rem;
   cursor: pointer;
   /* To make all text unselectable */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -40,12 +40,12 @@
   .swap {
     position: absolute;
     margin-left: 16rem;
-    top: 13.5rem;
+    top: 12.9rem;
     transform: rotate(90deg);
   }
 }
 @media (max-width: 360px) {
   .swap {
-    top: 11.35rem;
+    top: 10.85rem;
   }
 }

@@ -21,11 +21,9 @@ const Footer = ({ selectACoin, selectBCoin, coins }) => {
     return supported;
   });
 
-  const coinAreSelected =
-    Object.keys(selectACoin).length && Object.keys(selectBCoin).length;
   return (
     <Router>
-      <footer className={coinAreSelected ? "footer footer-selected" : "footer"}>
+      <footer className="footer">
         <hr />
         <div className="social-icon-row">
           <ul className="social-icons">

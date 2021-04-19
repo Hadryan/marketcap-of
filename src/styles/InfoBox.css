@@ -17,7 +17,7 @@
   border-radius: 7px;
   display: none;
   position: absolute;
-  top: 16.5rem;
+  bottom: 7.5rem;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -50,7 +50,7 @@
 
 @media (max-width: 800px) {
   .content {
-    top: 15rem;
+    bottom: 7rem;
     width: 34rem;
   }
   .content > p {
@@ -59,7 +59,7 @@
 }
 @media (max-width: 555px) {
   .content {
-    top: 20rem;
+    bottom: 5.8rem;
     width: 22rem;
   }
   .content > p {
@@ -71,8 +71,8 @@
 }
 @media (max-width: 360px) {
   .content {
-    top: 19.5rem;
-    width: 18rem;
+    bottom: 4.75rem;
+    width: 19rem;
   }
   .content > p {
     font-size: 0.9rem;
