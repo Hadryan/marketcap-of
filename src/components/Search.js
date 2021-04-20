@@ -15,6 +15,7 @@ const Search = ({
   setNr,
   setKeyPress,
   setMouseMove,
+  donationInput,
 }) => {
   //ref
   const ref = useRef();
@@ -78,7 +79,7 @@ const Search = ({
       </h1>
       <form className="search-form" onSubmit={handleSubmit}>
         <input
-          className="coin-input"
+          className={"coin-input " + donationInput}
           type="text"
           value={search}
           onChange={handleChange}

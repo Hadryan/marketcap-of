@@ -16,6 +16,8 @@ const CoinsList = ({
   keyPress,
   setKeyPress,
   mouseMove,
+  donationList,
+  donationCoin,
 }) => {
   //filter coins to what the current search value is
   const filteredCoins = coins.filter((coin) => {
@@ -57,7 +59,7 @@ const CoinsList = ({
   };
 
   return (
-    <div className="coins-container" ref={refCurrentCoin}>
+    <div className={"coins-container " + donationList} ref={refCurrentCoin}>
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
         filteredCoins.map((coin, index) => {
@@ -79,6 +81,7 @@ const CoinsList = ({
               marketcap={coin.market_cap}
               price={coin.current_price}
               index={index}
+              donationCoin={donationCoin}
             />
           );
         })

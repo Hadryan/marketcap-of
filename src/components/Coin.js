@@ -7,8 +7,6 @@ const Coin = ({
   name,
   image,
   symbol,
-  price,
-  marketcap,
   setSelectCoin,
   setDisplay,
   setSearch,
@@ -16,6 +14,7 @@ const Coin = ({
   setNr,
   filteredCoins,
   mouseMove,
+  donationCoin,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -32,6 +31,7 @@ const Coin = ({
     if (mouseMove === true) {
       setNr(index);
     }
+    return;
   };
   return (
     <div
@@ -43,8 +43,8 @@ const Coin = ({
         className={
           //to get the color on selected coin
           name === filteredCoins[nr].name
-            ? "coin-row selected-dropdown"
-            : "coin-row"
+            ? "coin-row selected-dropdown " + donationCoin
+            : "coin-row " + donationCoin
         }
       >
         <div className="coin">

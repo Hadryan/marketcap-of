@@ -12,6 +12,7 @@ import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
 import Footer from "../components/Footer";
 
+import addDonationToData from "../donation/addDonationToData";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 
@@ -29,6 +30,8 @@ const Homepage = () => {
   const [selectBCoin, setSelectBCoin] = useState({});
   const [keyPress, setKeyPress] = useState(false);
   const [mouseMove, setMouseMove] = useState(false);
+  const [donateCoins, setDonateCoins] = useState([]);
+  const [selectDonationCoin, setSelectDonationCoin] = useState({});
 
   //fetch all coins
   useEffect(() => {
@@ -36,24 +39,31 @@ const Homepage = () => {
     axios
       .get(api)
       .then((res) => {
-        const data = res.data.filter(
-          (coin) =>
-            //quickfix to get away the common stable coins
-            !coin.name.toLowerCase().includes("usd") &&
-            !coin.symbol.toLowerCase().includes("usd")
-        );
+        //add the donation info to the data
+        addDonationToData(res.data);
+
         getCoinById("safe-haven").then((result) => {
           data.push(result[0]);
         });
         getCoinById("oceanex-token").then((result) => {
           data.push(result[0]);
         });
+        const data = res.data.filter(
+          (coin) =>
+            //quickfix to get away the common stable coins
+            !coin.name.toLowerCase().includes("usd") &&
+            !coin.symbol.toLowerCase().includes("usd")
+        );
         setCoins(data);
+        const canDonateTo = res.data.filter((coin) => {
+          return coin.donation.active === true;
+        });
+        setDonateCoins(canDonateTo);
+        setSelectDonationCoin(canDonateTo[0]);
       })
       .catch((error) => console.log(error));
     // }, 4000);
   }, []);
-
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });
@@ -165,6 +175,15 @@ const Homepage = () => {
         selectACoin={selectACoin}
         selectBCoin={selectBCoin}
         coins={coins}
+        selectNr={selectNr}
+        setSelectNr={setSelectNr}
+        keyPress={keyPress}
+        setKeyPress={setKeyPress}
+        mouseMove={mouseMove}
+        setMouseMove={setMouseMove}
+        donateCoins={donateCoins}
+        selectDonationCoin={selectDonationCoin}
+        setSelectDonationCoin={setSelectDonationCoin}
       />
     </div>
   );

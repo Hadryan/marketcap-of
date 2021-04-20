@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+h1 {
+  font-size: 1.25rem;
+  color: #e0e1e3;
+}
+
+.donation-box > h3 {
+  margin-top: 0.5rem;
+  color: #e0e1e3;
+  background: transparent;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.15;
+  font-family: "Inter", sans-serif;
+}
+
 .donation-page-container {
   position: absolute;
   height: 100%;
@@ -7,19 +23,19 @@
   padding: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 .donation-container {
-  background: linear-gradient(#6e5b91 0%, #3b344e 67.77%, #292636 100%);
-  border: 1px solid rgba(211, 194, 233, 0.123);
   width: 18rem;
   height: 33.5rem;
-  border-radius: 20px;
-  /* to make border look the same all around */
-  background-origin: border-box;
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(#6e5b91 0%, #3b344e 67.77%, #292636 100%);
+  border: 1px solid rgba(211, 194, 233, 0.123);
+  border-radius: 20px;
+  /* to make border look the same all around */
+  background-origin: border-box;
 }
 header {
   margin: 0.5rem;
@@ -28,7 +44,6 @@ header {
 }
 .donation-title {
   background-color: transparent;
-  font-size: 1.5rem;
   margin-bottom: 0.25rem;
 }
 .donation-description {
@@ -59,10 +74,36 @@ header {
 .nav-donation > .method {
   background-color: #36324b;
 }
-.donation-method {
+.donation-box {
   margin-top: 1rem;
-  width: 90%;
-  height: 5rem;
+  width: 97%;
   background: rgba(30, 31, 44, 0.68);
   border: 1px solid rgba(94, 86, 145, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.box-method {
+  height: 5rem;
+}
+.box-amount {
+  height: 10rem;
+}
+.method-form {
+  margin-top: 0.5rem;
+}
+.method-form > select {
+  color: white;
+  width: 10rem;
+  height: 1.5rem;
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: #484063;
+  outline: none;
+}
+.coinlist-donation {
+  width: 2rem;
+}
+.method-form > select > option {
 }

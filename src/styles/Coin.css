@@ -15,6 +15,13 @@
   border-bottom: solid 1px gray;
   cursor: pointer;
 }
+.donation-coin {
+  height: 40px;
+}
+.donation-coin > .coin > img {
+  height: 23px;
+  width: 23px;
+}
 .selected-dropdown {
   background-color: rgb(62, 65, 99);
 }

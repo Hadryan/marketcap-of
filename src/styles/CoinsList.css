@@ -17,10 +17,22 @@
   user-select: none; /* Non-prefixed version, currently*/
   -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
+.donation-list {
+  width: 16rem;
+  height: 11.25rem;
+  margin-top: 3.75rem;
+}
+.donation-list::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.donation-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .coins-container::-webkit-scrollbar {
   width: 10px;
 }
-.coins-container::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: rgb(51, 53, 85);
 }
 ::-webkit-scrollbar-thumb {
@@ -38,6 +50,7 @@ h1 {
   bottom: 0;
   text-align: center;
   opacity: 50%;
+  color: white;
 }
 
 @media (max-width: 800px) {

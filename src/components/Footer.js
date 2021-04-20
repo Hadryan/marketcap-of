@@ -5,22 +5,23 @@ import { faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import iconHand from "../img/hand.svg";
 //pages
 import Donation from "../pages/Donation";
-//supported coins JS
-import supportedCoins from "../donation/supported-coins";
+
 //route for Donation page
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
-const Footer = ({ selectACoin, selectBCoin, coins }) => {
-  //to use the coins objects but only the ones that matches the name from my custom Json
-  const coinsSupported = coins.filter((coin) => {
-    const supported = !coin.name.includes(
-      supportedCoins.filter((sup) => {
-        return coin.name === sup.name;
-      })
-    );
-    return supported;
-  });
-
+const Footer = ({
+  selectACoin,
+  setNr,
+  nr,
+  keyPress,
+  setKeyPress,
+  mouseMove,
+  setMouseMove,
+  donateCoins,
+  coins,
+  selectDonationCoin,
+  setSelectDonationCoin,
+}) => {
   return (
     <Router>
       <footer className="footer">
@@ -32,6 +33,7 @@ const Footer = ({ selectACoin, selectBCoin, coins }) => {
                 className="btn btn-twitter"
                 href="https://twitter.com/MarketCapOf"
                 target="_blank"
+                rel="noreferrer"
               >
                 <FontAwesomeIcon className="fa twitter" icon={faTwitter} />
               </a>
@@ -42,14 +44,14 @@ const Footer = ({ selectACoin, selectBCoin, coins }) => {
                 <button className="btn btn-hand">
                   {
                     //only write out image if coins exists
-                    Object.keys(coins).length ? (
+                    Object.keys(donateCoins).length ? (
                       <img
                         className="coin-over-hand"
                         src={
                           // Bitcoin is set to default as supported coin
-                          coinsSupported.includes(selectACoin)
+                          donateCoins.includes(selectACoin)
                             ? selectACoin.image
-                            : coins[0].image
+                            : donateCoins[0].image
                         }
                         alt="coin"
                       />
@@ -75,7 +77,20 @@ const Footer = ({ selectACoin, selectBCoin, coins }) => {
           </p>
         </div>
       </footer>
-      <Route component={Donation} exact path="/donation" />
+      <Route exact path="/donation">
+        <Donation
+          selectNr={nr}
+          setSelectNr={setNr}
+          keyPress={keyPress}
+          setKeyPress={setKeyPress}
+          mouseMove={mouseMove}
+          setMouseMove={setMouseMove}
+          selectACoin={selectACoin}
+          donateCoins={donateCoins}
+          selectDonationCoin={selectDonationCoin}
+          setSelectDonationCoin={setSelectDonationCoin}
+        />
+      </Route>
     </Router>
   );
 };

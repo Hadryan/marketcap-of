@@ -46,9 +46,16 @@
   color: #e2e2e2;
   font-size: 1rem;
   outline: none;
+  background-color: transparent;
 }
 ::placeholder {
   color: rgba(255, 255, 255, 0.658);
+}
+.donation-input {
+  margin-top: 0.5rem;
+  background-image: none;
+  background-color: transparent;
+  background: #484063;
 }
 
 @media (max-width: 800px) {
@@ -68,5 +75,8 @@
   .coin-input {
     width: 250px;
     height: 40px;
+  }
+  .donation-input {
+    height: 35px;
   }
 }
