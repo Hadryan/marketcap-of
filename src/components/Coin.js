@@ -14,7 +14,8 @@ const Coin = ({
   setNr,
   filteredCoins,
   mouseMove,
-  donationCoin,
+  donationCoinStyle,
+  selectedDonationCoinStyle,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -42,15 +43,17 @@ const Coin = ({
       <div
         className={
           //to get the color on selected coin
+          // if selected a donation coin, then hide the highligt when selected, and do hover instead
           name === filteredCoins[nr].name
-            ? "coin-row selected-dropdown " + donationCoin
-            : "coin-row " + donationCoin
+            ? `coin-row selected-dropdown
+              ${donationCoinStyle} ${selectedDonationCoinStyle}`
+            : `coin-row ${donationCoinStyle}`
         }
       >
         <div className="coin">
           <img src={image} alt="crypto" />
           <h1>{name}</h1>
-          <p className="coin-symbol">{symbol}</p>
+          {!donationCoinStyle ? <p className="coin-symbol">{symbol}</p> : ""}
           {/* <p className="coin-price">${price}</p> */}
         </div>
       </div>

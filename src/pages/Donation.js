@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-//styles
-import "../styles/Donation.css";
-import "../styles/CoinsList.css";
-import "../styles/Coin.css";
+
 //components
-import CoinsList from "../components/CoinsList";
-import DropdownSelected from "../components/DropdownSelected";
-import Search from "../components/Search";
-import SelectCoinInSearch from "../components/SelectedCoinInSearch";
+import DonationMethodBox from "../components/DonationMethodBox";
+//hook
+import useClickOutside from "../hooks/useClickOutside";
 
 const Donation = ({
   donateCoins,
@@ -21,18 +17,25 @@ const Donation = ({
 }) => {
   //states
 
-  const [search, setSearch] = useState("");
   const [showDropDown, setShowDropDown] = useState(false);
   const [filteredCoins, setFilteredCoins] = useState([]);
   const [nr, setNr] = useState(0);
+  const [search, setSearch] = useState("");
 
   //to remove the selected donation coin from the drop down
   useEffect(() => {
     setFilteredCoins(donateCoins.filter((coin) => coin !== selectDonationCoin));
   }, [selectDonationCoin]);
-  console.log(selectDonationCoin);
+  const dropdownRef = useClickOutside(() => {
+    setShowDropDown(false);
+  });
+  //handlers
+  //handler
+  const handleMouseMove = () => {
+    setMouseMove(true);
+  };
   return (
-    <div className="donation-page-container">
+    <div className="donation-page-container" onMouseOver={handleMouseMove}>
       <div className="donation-container">
         <header>
           <h1 className="donation-title">Donate</h1>
@@ -46,49 +49,20 @@ const Donation = ({
           <li className="info">Info</li>
           <li className="send">Send</li>
         </ul>
-        <div className="donation-box box-method">
-          <h3>Select donation method</h3>
-
-          <DropdownSelected
-            selectDonationCoin={selectDonationCoin}
-            setShowDropDown={setShowDropDown}
-            showDropDown={showDropDown}
-          />
-          {showDropDown ? (
-            <CoinsList
-              coins={filteredCoins}
-              search={search}
-              setSearch={setSearch}
-              setSelectCoin={setSelectDonationCoin}
-              setDisplay={setShowDropDown}
-              display={showDropDown}
-              setFilteredCoins={setFilteredCoins}
-              setNr={setNr}
-              nr={nr}
-              keyPress={keyPress}
-              setKeyPress={setKeyPress}
-              mouseMove={mouseMove}
-              donationList="donation-list"
-              donationCoin="donation-coin"
-            />
-          ) : (
-            ""
-          )}
-          {/* <form className="method-form" action="">
-             <select name="cryptos" id="cryptos">
-               {coinsSupported.length
-                ? coinsSupported.map((coin) => {
-                    return (
-                      <option key={coin.id} value={coin.name}>
-                        {coin.name} ({coin.symbol.toUpperCase()})
-                      </option>
-                    );
-                  })
-                : //else
-                  "<option>Loading...</option>"}
-            </select>
-          </form>  */}
-        </div>
+        <DonationMethodBox
+          filteredCoins={filteredCoins}
+          setSelectDonationCoin={setSelectDonationCoin}
+          selectDonationCoin={selectDonationCoin}
+          setShowDropDown={setShowDropDown}
+          showDropDown={showDropDown}
+          setFilteredCoins={setFilteredCoins}
+          setNr={setNr}
+          nr={nr}
+          mouseMove={mouseMove}
+          refProp={dropdownRef}
+          setSearch={setSearch}
+          search={search}
+        />
         <div className="donation-box box-amount">
           <h3>Donation amount</h3>
         </div>

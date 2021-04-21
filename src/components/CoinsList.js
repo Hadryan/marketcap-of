@@ -17,7 +17,8 @@ const CoinsList = ({
   setKeyPress,
   mouseMove,
   donationList,
-  donationCoin,
+  donationCoinStyle,
+  selectedDonationCoinStyle,
 }) => {
   //filter coins to what the current search value is
   const filteredCoins = coins.filter((coin) => {
@@ -81,7 +82,8 @@ const CoinsList = ({
               marketcap={coin.market_cap}
               price={coin.current_price}
               index={index}
-              donationCoin={donationCoin}
+              donationCoinStyle={donationCoinStyle}
+              selectedDonationCoinStyle={selectedDonationCoinStyle}
             />
           );
         })

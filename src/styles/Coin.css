@@ -22,7 +22,14 @@
   height: 23px;
   width: 23px;
 }
+
 .selected-dropdown {
+  background-color: rgb(62, 65, 99);
+}
+.selected-donation-coin {
+  background-color: #292b42;
+}
+.selected-donation-coin:hover {
   background-color: rgb(62, 65, 99);
 }
 

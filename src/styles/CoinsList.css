@@ -18,15 +18,14 @@
   -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
 .donation-list {
-  width: 16rem;
+  width: 17rem;
   height: 11.25rem;
-  margin-top: 3.75rem;
+  margin-top: 0.15rem;
+  position: relative;
 }
+
 .donation-list::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-.donation-list::-webkit-scrollbar-track {
-  background: transparent;
+  background: #77699e;
 }
 
 .coins-container::-webkit-scrollbar {

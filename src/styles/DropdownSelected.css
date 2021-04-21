@@ -1,0 +1,30 @@
+.donation-coin-selected-container {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0 1rem 0 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #60548091;
+  width: 250px;
+  height: 35px;
+  position: relative;
+}
+
+.fa-down {
+  background: transparent;
+  color: #e0e1e3;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+}
+.up {
+  transform: rotate(180deg);
+}
+
+.donation-coin-selected-title {
+  background-color: transparent;
+  margin-right: 18.4px;
+  color: #e0e1e3;
+  font-weight: lighter;
+}
