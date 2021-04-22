@@ -13,7 +13,11 @@ h1 {
   font-size: 1rem;
   font-family: "Inter", sans-serif;
 }
-
+.donation-box > h2 {
+  background-color: transparent;
+  font-size: 1rem;
+  color: #e0e1e3;
+}
 .donation-page-container {
   position: absolute;
   height: 100%;
@@ -87,9 +91,7 @@ header {
 .box-method {
   height: 6rem;
 }
-.box-amount {
-  height: 10rem;
-}
+
 .method-form {
   margin-top: 0.5rem;
 }

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 //components
 import DonationMethodBox from "../components/DonationMethodBox";
+import DonationAmountBox from "../components/DonationAmountBox";
 //hook
 import useClickOutside from "../hooks/useClickOutside";
+//styles
+import "../styles/Donation.css";
 
 const Donation = ({
   donateCoins,
@@ -63,9 +65,7 @@ const Donation = ({
           setSearch={setSearch}
           search={search}
         />
-        <div className="donation-box box-amount">
-          <h3>Donation amount</h3>
-        </div>
+        <DonationAmountBox price={selectDonationCoin.current_price} />
       </div>
     </div>
   );

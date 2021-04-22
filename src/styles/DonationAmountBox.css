@@ -1,0 +1,106 @@
+.donation-box h2 {
+  background-color: transparent;
+  font-size: 1rem;
+  color: #e0e1e3;
+  z-index: 0;
+}
+.box-amount {
+  height: 12rem;
+}
+.box-amount > h3 {
+  margin: 0.75rem 0 0.75rem 0;
+}
+.amount-grid {
+  display: grid;
+  grid-template-columns: 6.5rem 6.5rem;
+  grid-template-rows: 2.25rem 2.25rem 2.25rem 2.25rem;
+  background-color: transparent;
+}
+.amount {
+  border: 1px solid #7070704b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.amount:hover {
+  background-color: #34364d8e;
+}
+.radio {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+}
+.radio-enter {
+}
+.one {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.two {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.three {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.four {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.enter {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  cursor: text;
+}
+.enter > input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  outline: none;
+  border: none;
+  color: #e0e1e3;
+  font-size: 1rem;
+  cursor: unset;
+}
+/* To hide up/down counter on all browsers */
+.enter > input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.enter > input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* to here*/
+.result {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  border: none;
+  background-color: transparent;
+}
+.result:hover {
+  background: transparent;
+}
+.radio-style {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1f2c8e;
+  cursor: pointer;
+}
+/* When the radio button is checked, add a background */
+.radio:checked + .radio-style {
+  background-color: #7b37da;
+}
+
+.enter > .usd-sign {
+  position: absolute;
+  left: 0.75rem;
+  color: #e0e1e3;
+  z-index: 1;
+}
