@@ -197,6 +197,13 @@ form {
   width: 95%;
   height: 95%;
 }
+.link-tohome {
+  text-decoration: none;
+  width: 45%;
+}
+.done-btn {
+  width: 100%;
+}
 @media (min-height: 640px) {
   .box-method {
     height: 8rem;

@@ -5,6 +5,8 @@ import DonationAmountBox from "../components/DonationAmountBox";
 import DonationInfoBox from "../components/DonationInfoBox";
 import DonationSendBoxIntruction from "../components/DonationSendBoxIntruction";
 import DonationSendBox from "../components/DonationSendBox";
+//route for going back page
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
 //styles
 import "../styles/Donation.css";
@@ -154,17 +156,22 @@ const Donation = ({
               ""
             )}
             {currentPage === 2 ? (
-              <button
-                type="submit"
-                className="navigate-btn done-btn noSelect"
-                // onSubmit={() => handleClickContinue(1)}
-              >
-                <FontAwesomeIcon
-                  className="continue-arrow right-done noSelect"
-                  icon={faCheck}
-                />
-                <h2 className="noSelect">Done</h2>
-              </button>
+              <Link to="/" className="link-tohome">
+                <button
+                  type="button"
+                  className="navigate-btn done-btn noSelect"
+                  // onSubmit={() => handleClickContinue(1)}
+                  onClick={() => {
+                    alert("Thanks for donating!");
+                  }}
+                >
+                  <FontAwesomeIcon
+                    className="continue-arrow right-done noSelect"
+                    icon={faCheck}
+                  />
+                  <h2 className="noSelect">Done</h2>
+                </button>
+              </Link>
             ) : (
               ""
             )}
