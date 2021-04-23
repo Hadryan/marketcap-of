@@ -7,7 +7,14 @@ import iconHand from "../img/hand.svg";
 import Donation from "../pages/Donation";
 
 //route for Donation page
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import {
+  Route,
+  Link,
+  BrowserRouter as Router,
+  HashRouter,
+  Switch,
+} from "react-router-dom";
+import Homepage from "../pages/Homepage";
 
 const Footer = ({
   selectACoin,
@@ -77,20 +84,22 @@ const Footer = ({
           </p>
         </div>
       </footer>
-      <Route exact path="/donation">
-        <Donation
-          selectNr={nr}
-          setSelectNr={setNr}
-          keyPress={keyPress}
-          setKeyPress={setKeyPress}
-          mouseMove={mouseMove}
-          setMouseMove={setMouseMove}
-          selectACoin={selectACoin}
-          donateCoins={donateCoins}
-          selectDonationCoin={selectDonationCoin}
-          setSelectDonationCoin={setSelectDonationCoin}
-        />
-      </Route>
+      <Switch>
+        <Route exact path="/donation">
+          <Donation
+            selectNr={nr}
+            setSelectNr={setNr}
+            keyPress={keyPress}
+            setKeyPress={setKeyPress}
+            mouseMove={mouseMove}
+            setMouseMove={setMouseMove}
+            selectACoin={selectACoin}
+            donateCoins={donateCoins}
+            selectDonationCoin={selectDonationCoin}
+            setSelectDonationCoin={setSelectDonationCoin}
+          />
+        </Route>
+      </Switch>
     </Router>
   );
 };
