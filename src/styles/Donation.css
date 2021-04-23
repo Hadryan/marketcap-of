@@ -189,7 +189,7 @@ header {
 .hidden {
   display: none;
 }
-form {
+.donation-form {
   background-color: transparent;
   display: flex;
   justify-content: center;

@@ -38,3 +38,8 @@
     font-weight: normal;
   }
 }
+@media (min-width: 800px) {
+  .donation-coin-selected-container {
+    width: 17rem;
+  }
+}

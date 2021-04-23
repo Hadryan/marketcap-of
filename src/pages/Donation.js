@@ -52,7 +52,7 @@ const Donation = ({
   };
   return (
     <div className="donation-page-container" onMouseOver={handleMouseMove}>
-      <form action="">
+      <form className="donation-form" action="">
         <div className="donation-container">
           <header>
             <h1 className="donation-title noSelect">Donate</h1>

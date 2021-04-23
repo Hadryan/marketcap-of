@@ -11,7 +11,7 @@ const SelectedCoinInSearch = ({ selectCoin, setSelectCoin }) => {
   };
 
   return (
-    <div className="container">
+    <div className="coin-in-search-container">
       <img src={selectCoin.image} alt="img-a" />
       <h4 className="symbol">{selectCoin.symbol.toUpperCase()}</h4>
       <h4 className="price">${selectCoin.current_price}</h4>
