@@ -1,20 +1,40 @@
 {
   "files": {
-    "main.css": "/static/css/main.9efcc3b9.chunk.css",
-    "main.js": "/static/js/main.5a21e4d5.chunk.js",
-    "main.js.map": "/static/js/main.5a21e4d5.chunk.js.map",
+    "main.css": "/static/css/main.8d4fee69.chunk.css",
+    "main.js": "/static/js/main.40824b7d.chunk.js",
+    "main.js.map": "/static/js/main.40824b7d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.97f13d69.js",
     "runtime-main.js.map": "/static/js/runtime-main.97f13d69.js.map",
-    "static/js/2.7b3af4c5.chunk.js": "/static/js/2.7b3af4c5.chunk.js",
-    "static/js/2.7b3af4c5.chunk.js.map": "/static/js/2.7b3af4c5.chunk.js.map",
+    "static/js/2.3abbb6c4.chunk.js": "/static/js/2.3abbb6c4.chunk.js",
+    "static/js/2.3abbb6c4.chunk.js.map": "/static/js/2.3abbb6c4.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.9efcc3b9.chunk.css.map": "/static/css/main.9efcc3b9.chunk.css.map",
-    "static/js/2.7b3af4c5.chunk.js.LICENSE.txt": "/static/js/2.7b3af4c5.chunk.js.LICENSE.txt"
+    "static/css/main.8d4fee69.chunk.css.map": "/static/css/main.8d4fee69.chunk.css.map",
+    "static/js/2.3abbb6c4.chunk.js.LICENSE.txt": "/static/js/2.3abbb6c4.chunk.js.LICENSE.txt",
+    "static/media/BinanceCoin-qr.fa8934af.PNG": "/static/media/BinanceCoin-qr.fa8934af.PNG",
+    "static/media/Bitcoin-qr.b3f81fbc.PNG": "/static/media/Bitcoin-qr.b3f81fbc.PNG",
+    "static/media/BitcoinCash-qr.3f1d0497.PNG": "/static/media/BitcoinCash-qr.3f1d0497.PNG",
+    "static/media/Cardano-qr.c5805ce0.PNG": "/static/media/Cardano-qr.c5805ce0.PNG",
+    "static/media/ChainLink-qr.51675279.PNG": "/static/media/ChainLink-qr.51675279.PNG",
+    "static/media/DogeCoin-qr.0b9bb98e.PNG": "/static/media/DogeCoin-qr.0b9bb98e.PNG",
+    "static/media/Ethereum-qr.26fd2dad.PNG": "/static/media/Ethereum-qr.26fd2dad.PNG",
+    "static/media/LiteCoin-qr.a53b100a.PNG": "/static/media/LiteCoin-qr.a53b100a.PNG",
+    "static/media/Monero-qr.0c64711a.PNG": "/static/media/Monero-qr.0c64711a.PNG",
+    "static/media/NEO-qr.4e225e50.PNG": "/static/media/NEO-qr.4e225e50.PNG",
+    "static/media/Polkadot-qr.df68b1de.PNG": "/static/media/Polkadot-qr.df68b1de.PNG",
+    "static/media/Stellar-qr.77d9d275.PNG": "/static/media/Stellar-qr.77d9d275.PNG",
+    "static/media/StorJ-qr.3e487b11.PNG": "/static/media/StorJ-qr.3e487b11.PNG",
+    "static/media/Tron-qr.c877032e.PNG": "/static/media/Tron-qr.c877032e.PNG",
+    "static/media/USDT-qr.789738c7.PNG": "/static/media/USDT-qr.789738c7.PNG",
+    "static/media/Uniswap-qr.be853d7f.PNG": "/static/media/Uniswap-qr.be853d7f.PNG",
+    "static/media/VeChain-qr.50e36a08.PNG": "/static/media/VeChain-qr.50e36a08.PNG",
+    "static/media/VeThor-qr.0df4ad4e.PNG": "/static/media/VeThor-qr.0df4ad4e.PNG",
+    "static/media/XRP-qr.1d391d2e.PNG": "/static/media/XRP-qr.1d391d2e.PNG",
+    "static/media/hand.60c48d49.svg": "/static/media/hand.60c48d49.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.97f13d69.js",
-    "static/js/2.7b3af4c5.chunk.js",
-    "static/css/main.9efcc3b9.chunk.css",
-    "static/js/main.5a21e4d5.chunk.js"
+    "static/js/2.3abbb6c4.chunk.js",
+    "static/css/main.8d4fee69.chunk.css",
+    "static/js/main.40824b7d.chunk.js"
   ]
 }
