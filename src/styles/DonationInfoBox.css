@@ -1,0 +1,48 @@
+.box-info {
+  height: 18rem;
+}
+.info-input-container {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.info-input {
+  width: 100%;
+  height: 1.7rem;
+  margin-bottom: 0.65rem;
+  border: 0.5px solid #8a8a8a81;
+  padding: 0.35rem;
+  color: #e0e1e3;
+}
+.info-checkbox {
+  margin-bottom: 0.75rem;
+  margin-right: 0.5rem;
+  background: tomato;
+}
+label {
+  color: #b0b0b5;
+  background-color: transparent;
+  align-self: flex-start;
+  font-size: 0.85rem;
+}
+.textarea {
+  height: 4rem;
+  outline: none;
+  overflow: hidden;
+  resize: none;
+}
+@media (min-height: 640px) {
+  .box-info {
+    height: 23rem;
+  }
+  .info-input {
+    height: 2.25rem;
+  }
+  .textarea {
+    height: 6rem;
+  }
+}

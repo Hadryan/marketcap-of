@@ -10,7 +10,6 @@ h1 {
   background: transparent;
   font-weight: lighter;
   text-align: center;
-  font-size: 1rem;
   font-family: "Inter", sans-serif;
 }
 .donation-box > h2 {
@@ -30,8 +29,11 @@ h1 {
   align-items: center;
 }
 .donation-container {
-  width: 18rem;
-  height: 33.5rem;
+  margin: 0.5rem;
+  height: 100%;
+  width: 100%;
+  max-width: 750px;
+  max-height: 1080px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -71,15 +73,19 @@ header {
   font-size: 0.8rem;
   padding: 0.25rem 0 0.25rem 0;
   border-right: 1px solid rgba(0, 0, 0, 0.158);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-donation > .send {
   border: none;
 }
-.nav-donation > .method {
+.nav-donation > .current-nav {
   background-color: #36324b;
 }
 .donation-box {
-  margin-top: 1rem;
+  position: absolute;
+  top: 1rem;
   width: 97%;
   background: rgba(30, 31, 44, 0.68);
   border: 1px solid rgba(94, 86, 145, 0.85);
@@ -90,6 +96,7 @@ header {
 }
 .box-method {
   height: 6rem;
+  position: relative;
 }
 
 .method-form {
@@ -112,4 +119,93 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.button-row {
+  bottom: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  background-color: transparent;
+}
+.navigate-btn {
+  position: relative;
+  width: 45%;
+  height: 2.5rem;
+  background-color: #484063;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.navigate-btn:hover {
+  background-color: #5a507a;
+}
+
+.navigate-btn > h2 {
+  font-size: 1.15rem;
+  color: #e0e1e3;
+  background-color: transparent;
+
+  font-weight: lighter;
+}
+.continue-btn > h2 {
+  margin-right: 0.75rem;
+}
+.back-btn > h2 {
+  margin-left: 0.75rem;
+  margin-right: 0;
+}
+.done-btn > h2 {
+  margin-right: 0.5rem;
+}
+.continue-arrow {
+  position: absolute;
+  color: #e0e1e3;
+  background-color: transparent;
+  font-size: 1rem;
+}
+.right {
+  right: 1rem;
+}
+.left {
+  left: 1rem;
+}
+.right-done {
+  right: 1.3rem;
+}
+.section-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.hidden {
+  display: none;
+}
+form {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+}
+@media (min-height: 640px) {
+  .box-method {
+    height: 8rem;
+  }
+  .donation-box > h3 {
+    font-size: 1.25rem;
+  }
+  .nav-donation > li {
+    height: 2rem;
+    font-size: 1rem;
+  }
 }

@@ -20,7 +20,7 @@ const DropdownSelected = ({
       {Object.keys(selectDonationCoin).length ? (
         <img src={selectDonationCoin.image} alt="coin" />
       ) : (
-        "Loading..."
+        <h2>Loading...</h2>
       )}
       <h1 className="donation-coin-selected-title">
         {selectDonationCoin.name}

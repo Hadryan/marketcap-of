@@ -28,3 +28,13 @@
   color: #e0e1e3;
   font-weight: lighter;
 }
+@media (min-height: 640px) {
+  .donation-coin-selected-container {
+    height: 50px;
+    margin-top: 1rem;
+  }
+  .donation-coin-selected-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+}

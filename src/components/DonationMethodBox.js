@@ -2,6 +2,8 @@ import React from "react";
 //components
 import CoinsList from "../components/CoinsList";
 import DropdownSelected from "../components/DropdownSelected";
+//hook
+import useClickOutside from "../hooks/useClickOutside";
 //styles
 import "../styles/Donation.css";
 import "../styles/CoinsList.css";
@@ -17,15 +19,18 @@ const DonationMethodBox = ({
   setNr,
   nr,
   setFilteredCoins,
-  refProp,
+
   setSearch,
   search,
 }) => {
+  const ref = useClickOutside(() => {
+    setShowDropDown(false);
+  });
   return (
     <div className="donation-box box-method">
       <h3>Select donation method</h3>
 
-      <div className="donation-list-container" ref={refProp}>
+      <div className="donation-list-container noSelect" ref={ref}>
         <DropdownSelected
           selectDonationCoin={selectDonationCoin}
           setShowDropDown={setShowDropDown}

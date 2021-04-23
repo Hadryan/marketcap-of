@@ -1,17 +1,28 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 //styles
 import "../styles/Donation.css";
 import "../styles/DonationAmountBox.css";
 //calculate
 import { fiatToCrypto } from "../calculatePrice";
 
-const DonationAmountBox = ({ price }) => {
-  const [donationAmount, setDonationAmount] = useState(0);
+const DonationAmountBox = ({
+  donationCoin,
+  donationAmount,
+  setDonationAmount,
+  setCryptoDonateAmount,
+}) => {
   const [inputAmount, setInputAmount] = useState(0);
 
   //fiat to crypto
-  const amountCrypto = fiatToCrypto(donationAmount, price);
-
+  const amountCrypto = fiatToCrypto(donationAmount, donationCoin.current_price);
+  //useEffect
+  useEffect(() => {
+    setCryptoDonateAmount(amountCrypto);
+  }, [donationAmount]);
+  useEffect(() => {
+    setCryptoDonateAmount(amountCrypto);
+  }, [donationCoin]);
+  console.log(donationAmount);
   //handlers
   const handleClick = (e) => {
     if (e.target.className === "radio radio-enter") {
@@ -39,7 +50,10 @@ const DonationAmountBox = ({ price }) => {
   const handleFocus = () => {
     enterInputRef.current.style.backgroundColor = "#7b37da";
   };
-  console.log(donationAmount);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   //refs
   const enterInputRef = useRef();
   return (
@@ -51,6 +65,7 @@ const DonationAmountBox = ({ price }) => {
             type="radio"
             name="radio"
             className="radio"
+            defaultChecked="true"
             value={5}
             onClick={handleClick}
           />
@@ -105,13 +120,27 @@ const DonationAmountBox = ({ price }) => {
             onChange={handleChange}
             onBlur={handleBlur}
             onFocus={handleFocus}
+            onSubmit={handleSubmit}
           />
-          <h2 className="usd-sign">$</h2>
+          <h2 className="usd-sign noSelect">$</h2>
         </div>
-        <div className="amount result">
-          {/* //if price is higher than 1000 then set more decimals */}
-          <h2>{amountCrypto.toFixed(price > 1000 < 3 ? 7 : 3)}</h2>
-        </div>
+        {donationAmount > 0 ? (
+          <div className="amount result">
+            {Object.keys(donationCoin).length ? (
+              <h2>
+                ≈ {/* //if price is higher than 1000 then set more decimals */}
+                {amountCrypto.toFixed(
+                  donationCoin.current_price > 1000 < 3 ? 7 : 3
+                )}{" "}
+                {donationCoin.symbol.toUpperCase()}
+              </h2>
+            ) : (
+              <h2>Loading...</h2>
+            )}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

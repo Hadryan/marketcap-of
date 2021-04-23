@@ -6,6 +6,8 @@
 }
 .box-amount {
   height: 12rem;
+  position: relative;
+  margin-top: 1rem;
 }
 .box-amount > h3 {
   margin: 0.75rem 0 0.75rem 0;
@@ -15,6 +17,7 @@
   grid-template-columns: 6.5rem 6.5rem;
   grid-template-rows: 2.25rem 2.25rem 2.25rem 2.25rem;
   background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 .amount {
   border: 1px solid #7070704b;
@@ -34,8 +37,7 @@
   opacity: 0;
   z-index: 1;
 }
-.radio-enter {
-}
+
 .one {
   grid-column: 1/2;
   grid-row: 1/2;
@@ -66,6 +68,7 @@
   color: #e0e1e3;
   font-size: 1rem;
   cursor: unset;
+  font-weight: bold;
 }
 /* To hide up/down counter on all browsers */
 .enter > input::-webkit-outer-spin-button,
@@ -86,6 +89,7 @@ input::-webkit-inner-spin-button {
 .result:hover {
   background: transparent;
 }
+
 .radio-style {
   position: absolute;
   width: 100%;
@@ -103,4 +107,14 @@ input::-webkit-inner-spin-button {
   left: 0.75rem;
   color: #e0e1e3;
   z-index: 1;
+}
+
+@media (min-height: 640px) {
+  .box-amount {
+    height: 15rem;
+  }
+  .amount-grid {
+    grid-template-columns: 8.5rem 8.5rem;
+    grid-template-rows: 3rem 3rem 3rem 3rem;
+  }
 }
