@@ -80,7 +80,7 @@ const Footer = ({
         </div>
         <div className="text-row">
           <p className="copyright-text">
-            &copy; {new Date().getFullYear()} Emil Neander. All Rights Reserved.
+            &copy; {new Date().getFullYear()} MarketCapOf. All Rights Reserved.
           </p>
         </div>
       </footer>
