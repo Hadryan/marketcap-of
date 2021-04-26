@@ -23,3 +23,14 @@ export const getCoinById = (id) => {
     })
     .catch((error) => console.log(error));
 };
+
+export const GetCoinTickerById = (id) => {
+  return axios
+    .get(
+      `https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=true&market_data=false&community_data=false&developer_data=false&sparkline=false`
+    )
+    .then((res) => {
+      return res.data;
+    })
+    .catch((error) => console.log(error));
+};

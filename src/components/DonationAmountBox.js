@@ -22,7 +22,6 @@ const DonationAmountBox = ({
   useEffect(() => {
     setCryptoDonateAmount(amountCrypto);
   }, [donationCoin]);
-  console.log(donationAmount);
   //handlers
   const handleClick = (e) => {
     if (e.target.className === "radio radio-enter") {

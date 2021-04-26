@@ -14,7 +14,6 @@ const CoinsList = ({
   setNr,
   nr,
   keyPress,
-  setKeyPress,
   mouseMove,
   donationList,
   donationCoinStyle,

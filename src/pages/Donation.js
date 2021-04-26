@@ -6,7 +6,7 @@ import DonationInfoBox from "../components/DonationInfoBox";
 import DonationSendBoxIntruction from "../components/DonationSendBoxIntruction";
 import DonationSendBox from "../components/DonationSendBox";
 //route for going back page
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //styles
 import "../styles/Donation.css";
@@ -20,11 +20,8 @@ import {
 
 const Donation = ({
   donateCoins,
-  keyPress,
-  setKeyPress,
   mouseMove,
   setMouseMove,
-  selectACoin,
   selectDonationCoin,
   setSelectDonationCoin,
 }) => {

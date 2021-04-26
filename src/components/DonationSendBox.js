@@ -2,12 +2,8 @@ import React, { useRef } from "react";
 import "../styles/DonationSendBox.css";
 //fonts
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClone, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
-const DonationSendBox = ({
-  selectDonationCoin,
-  donationAmount,
-  cryptoDonateAmount,
-}) => {
+import { faClone } from "@fortawesome/free-solid-svg-icons";
+const DonationSendBox = ({ selectDonationCoin, cryptoDonateAmount }) => {
   //ref for copying code
   const addressRef = useRef();
 
@@ -20,7 +16,7 @@ const DonationSendBox = ({
       <h3 className="qr-title">
         Send{" "}
         {cryptoDonateAmount.toFixed(
-          selectDonationCoin.current_price > 1000 < 3 ? 7 : 3
+          selectDonationCoin.current_price > 1000 ? 7 : 3
         )}{" "}
         {selectDonationCoin.name} <br />
         to the address bellow

@@ -3,7 +3,6 @@ import "../styles/DropdownSelected.css";
 //styles
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { ContentWriter } from "istanbul-lib-report";
 
 const DropdownSelected = ({
   selectDonationCoin,

@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
-//api
-import { apiUrl, getCoinById } from "../api";
 //fetch
 import axios from "axios";
-//style
-import "../styles/Homepage.css";
+import React, { useEffect, useState } from "react";
+import { addDonationToData, addExchangeToData } from "../addPropsToData";
+//api
+import { apiUrl, getCoinById } from "../api";
+import CoinsList from "../components/CoinsList";
+import Footer from "../components/Footer";
 //components
 import Search from "../components/Search";
-import CoinsList from "../components/CoinsList";
 import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
-import Footer from "../components/Footer";
-
-import addDonationToData from "../donation/addDonationToData";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
+//style
+import "../styles/Homepage.css";
 
 const Homepage = () => {
   const [api, setApi] = useState(apiUrl);
@@ -41,7 +40,8 @@ const Homepage = () => {
       .then((res) => {
         //add the donation info to the data
         addDonationToData(res.data);
-
+        //add exchange props to data
+        addExchangeToData(res.data);
         getCoinById("safe-haven").then((result) => {
           data.push(result[0]);
         });
@@ -55,6 +55,7 @@ const Homepage = () => {
             !coin.symbol.toLowerCase().includes("usd")
         );
         setCoins(data);
+        //setting the donation coins
         const canDonateTo = res.data.filter((coin) => {
           return coin.donation.active === true;
         });
@@ -63,7 +64,7 @@ const Homepage = () => {
       })
       .catch((error) => console.log(error));
     // }, 4000);
-  }, []);
+  }, [api]);
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });

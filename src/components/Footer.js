@@ -1,20 +1,15 @@
 import React from "react";
-import "../styles/Footer.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+//route for Donation page
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+//components
+import BuyCoin from "../components/BuyCoin";
 import iconHand from "../img/hand.svg";
 //pages
 import Donation from "../pages/Donation";
-
-//route for Donation page
-import {
-  Route,
-  Link,
-  BrowserRouter as Router,
-  HashRouter,
-  Switch,
-} from "react-router-dom";
-import Homepage from "../pages/Homepage";
+import "../styles/Footer.css";
+//icons
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = ({
   selectACoin,
@@ -25,7 +20,6 @@ const Footer = ({
   mouseMove,
   setMouseMove,
   donateCoins,
-  coins,
   selectDonationCoin,
   setSelectDonationCoin,
 }) => {
@@ -44,6 +38,9 @@ const Footer = ({
               >
                 <FontAwesomeIcon className="fa twitter" icon={faTwitter} />
               </a>
+            </li>
+            <li>
+              <BuyCoin selectACoin={selectACoin} />
             </li>
             <li>
               {/* Button to Donation page */}

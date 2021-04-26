@@ -4,7 +4,11 @@ import "../styles/SelectedCoinInSearch.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
-const SelectedCoinInSearch = ({ selectCoin, setSelectCoin }) => {
+const SelectedCoinInSearch = ({
+  selectCoin,
+  setSelectCoin,
+  setExchangeAvailable,
+}) => {
   //if clicked on the close icon
   const handleClick = () => {
     setSelectCoin({});

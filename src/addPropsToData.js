@@ -1,7 +1,7 @@
 //supported coins JS
-import supportedCoins from "./supported-coins";
+import supportedCoins from "./donation/supported-coins";
 
-const addDonationToData = (data) => {
+export const addDonationToData = (data) => {
   const newData = data.map((coin) => {
     coin["donation"] = {
       active: false,
@@ -20,4 +20,9 @@ const addDonationToData = (data) => {
   });
   return newData;
 };
-export default addDonationToData;
+export const addExchangeToData = (data) => {
+  const newData = data.map((coin) => {
+    coin["exchange"] = [];
+  });
+  return newData;
+};
