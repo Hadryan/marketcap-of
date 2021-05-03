@@ -33,8 +33,6 @@
 
 ![marketcap-of-v1 1](https://user-images.githubusercontent.com/73109435/114515322-864b8880-9c3c-11eb-96c6-3ea1f893407b.PNG)
 
-
-
 ### Built With
 
 - [React](https://reactjs.org/)
@@ -90,3 +88,6 @@ Emil Neander - emil.neander@gmail.com
 ## Packages
 
 - [FontAwesome](https://fontawesome.com/how-to-use/on-the-web/using-with/react)
+- [Axios](https://axios-http.com/docs/intro)
+- [React Router](https://reactrouter.com/web/guides/quick-start)
+- [EmailJS](https://www.emailjs.com/)
