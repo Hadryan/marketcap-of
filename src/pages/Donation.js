@@ -5,6 +5,8 @@ import DonationAmountBox from "../components/DonationAmountBox";
 import DonationInfoBox from "../components/DonationInfoBox";
 import DonationSendBoxIntruction from "../components/DonationSendBoxIntruction";
 import DonationSendBox from "../components/DonationSendBox";
+//import emailJs
+import emailjs from "emailjs-com";
 //route for going back page
 import { Link } from "react-router-dom";
 
@@ -25,19 +27,30 @@ const Donation = ({
   selectDonationCoin,
   setSelectDonationCoin,
 }) => {
-  //states
-
   const [showDropDown, setShowDropDown] = useState(false);
   const [filteredCoins, setFilteredCoins] = useState([]);
   const [nr, setNr] = useState(0);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const [donationAmount, setDonationAmount] = useState(5);
   const [cryptoDonateAmount, setCryptoDonateAmount] = useState(0);
+  const [donationForm, setDonationForm] = useState({
+    coinsymbol: "btc",
+    amount: 5,
+    cryptoAmount: 0,
+    firstname: "",
+    lastname: "",
+    fromemail: "",
+    message: "",
+  });
 
-  //to remove the selected donation coin from the drop down
   useEffect(() => {
+    //to remove the selected donation coin from the drop down
     setFilteredCoins(donateCoins.filter((coin) => coin !== selectDonationCoin));
+    //to change coinsymbol in form
+    setDonationForm({
+      ...donationForm,
+      coinsymbol: selectDonationCoin.symbol,
+    });
   }, [selectDonationCoin]);
 
   //handlers
@@ -47,15 +60,34 @@ const Donation = ({
   const handleClickContinue = (num) => {
     setCurrentPage(currentPage + num);
   };
+  const handleSubmitForm = () => {
+    emailjs
+      .send(
+        process.env.REACT_APP_KEY3,
+        process.env.REACT_APP_KEY2,
+        donationForm,
+        process.env.REACT_APP_KEY1
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+    alert("Thanks for donating!");
+  };
+
   return (
     <div className="donation-page-container" onMouseOver={handleMouseMove}>
-      <form className="donation-form" action="">
+      <form className="donation-form">
         <div className="donation-container">
           <header>
             <h1 className="donation-title noSelect">Donate</h1>
             <p className="donation-description">
-              Your contribution makes big difference. To be able to run this and
-              add more coins I need your support. Who likes ads?
+              Your contribution makes big difference. To be able to run this
+              alone and add more coins I need your support. Who likes ads?
             </p>
           </header>
           <ul className="nav-donation noSelect">
@@ -88,12 +120,14 @@ const Donation = ({
               mouseMove={mouseMove}
               setSearch={setSearch}
               search={search}
+              setDonationForm={setDonationForm}
             />
             <DonationAmountBox
               donationCoin={selectDonationCoin}
-              donationAmount={donationAmount}
-              setDonationAmount={setDonationAmount}
               setCryptoDonateAmount={setCryptoDonateAmount}
+              setDonationForm={setDonationForm}
+              donationForm={donationForm}
+              currentPage={currentPage}
             />
           </span>
           <span
@@ -103,7 +137,10 @@ const Donation = ({
                 : "section-container hidden"
             }
           >
-            <DonationInfoBox />
+            <DonationInfoBox
+              setDonationForm={setDonationForm}
+              donationForm={donationForm}
+            />
           </span>
           <span
             className={
@@ -117,8 +154,9 @@ const Donation = ({
             />
             <DonationSendBox
               selectDonationCoin={selectDonationCoin}
-              donationAmount={donationAmount}
               cryptoDonateAmount={cryptoDonateAmount}
+              setDonationForm={setDonationForm}
+              donationForm={donationForm}
             />
           </span>
           <div className="button-row">
@@ -157,10 +195,7 @@ const Donation = ({
                 <button
                   type="button"
                   className="navigate-btn done-btn noSelect"
-                  // onSubmit={() => handleClickContinue(1)}
-                  onClick={() => {
-                    alert("Thanks for donating!");
-                  }}
+                  onClick={handleSubmitForm}
                 >
                   <FontAwesomeIcon
                     className="continue-arrow right-done noSelect"

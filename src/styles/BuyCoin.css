@@ -1,9 +1,13 @@
-@keyframes fadeIn {
-  from {
+@keyframes fadeInAndScale {
+  0% {
     opacity: 0;
   }
-  to {
+  50% {
     opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 .buy-text {
@@ -11,13 +15,13 @@
   background-color: transparent;
   color: #a4aabb;
   font-weight: bold;
-  animation-name: fadeIn;
-  animation-duration: 0.25s;
+  animation-name: fadeInAndScale;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in;
 }
 .btn-buy {
-  animation-name: fadeIn;
-  animation-duration: 0.25s;
+  animation-name: fadeInAndScale;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in;
 }
 @media (max-width: 360px) {

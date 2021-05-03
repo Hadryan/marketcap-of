@@ -42,6 +42,7 @@ const Footer = ({
             <li>
               <BuyCoin selectACoin={selectACoin} />
             </li>
+
             <li>
               {/* Button to Donation page */}
               <Link to="/donation" className="link">
@@ -50,7 +51,7 @@ const Footer = ({
                     //only write out image if coins exists
                     Object.keys(donateCoins).length ? (
                       <img
-                        className="coin-over-hand"
+                        className="coin-over-hand opacity"
                         src={
                           // Bitcoin is set to default as supported coin
                           donateCoins.includes(selectACoin)
@@ -63,7 +64,16 @@ const Footer = ({
                       ""
                     )
                   }
-                  <img className="fa icon-hand" src={iconHand} alt="hand" />
+                  <img
+                    className={
+                      //only animate donate hand if coins exists
+                      Object.keys(donateCoins).length
+                        ? "fa icon-hand hand-anim"
+                        : "fa icon-hand"
+                    }
+                    src={iconHand}
+                    alt="hand"
+                  />
                   <p className="donate-text">Donate</p>
                 </button>
               </Link>

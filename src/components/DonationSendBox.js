@@ -3,7 +3,7 @@ import "../styles/DonationSendBox.css";
 //fonts
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClone } from "@fortawesome/free-solid-svg-icons";
-const DonationSendBox = ({ selectDonationCoin, cryptoDonateAmount }) => {
+const DonationSendBox = ({ selectDonationCoin, donationForm }) => {
   //ref for copying code
   const addressRef = useRef();
 
@@ -11,11 +11,12 @@ const DonationSendBox = ({ selectDonationCoin, cryptoDonateAmount }) => {
     const copyText = addressRef.current.innerText;
     window.prompt("Copy to clipboard: Ctrl+C, Enter", copyText);
   };
+
   return (
     <div className="donation-box box-send">
       <h3 className="qr-title">
         Send{" "}
-        {cryptoDonateAmount.toFixed(
+        {donationForm.cryptoAmount.toFixed(
           selectDonationCoin.current_price > 1000 ? 7 : 3
         )}{" "}
         {selectDonationCoin.name} <br />

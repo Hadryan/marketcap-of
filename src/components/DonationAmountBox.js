@@ -7,38 +7,41 @@ import { fiatToCrypto } from "../calculatePrice";
 
 const DonationAmountBox = ({
   donationCoin,
-  donationAmount,
-  setDonationAmount,
-  setCryptoDonateAmount,
+  setDonationForm,
+  donationForm,
+  currentPage,
 }) => {
   const [inputAmount, setInputAmount] = useState(0);
 
   //fiat to crypto
-  const amountCrypto = fiatToCrypto(donationAmount, donationCoin.current_price);
+  const amountCrypto = fiatToCrypto(
+    donationForm.amount,
+    donationCoin.current_price
+  );
   //useEffect
   useEffect(() => {
-    setCryptoDonateAmount(amountCrypto);
-  }, [donationAmount]);
+    setDonationForm({ ...donationForm, cryptoAmount: amountCrypto });
+  }, [donationForm.amount]);
   useEffect(() => {
-    setCryptoDonateAmount(amountCrypto);
-  }, [donationCoin]);
+    setDonationForm({ ...donationForm, cryptoAmount: amountCrypto });
+  }, [currentPage]);
   //handlers
   const handleClick = (e) => {
     if (e.target.className === "radio radio-enter") {
       enterInputRef.current.style.zIndex = 1;
       enterInputRef.current.focus();
-      setDonationAmount(e.target.value);
+      setDonationForm({ ...donationForm, amount: e.target.value });
     } else {
       enterInputRef.current.style.zIndex = 0;
       enterInputRef.current.style.backgroundColor = "transparent";
       enterInputRef.current.value = "";
       setInputAmount(0);
-      setDonationAmount(e.target.value);
+      setDonationForm({ ...donationForm, amount: e.target.value });
     }
   };
   const handleChange = (e) => {
-    setDonationAmount(e.target.value);
     setInputAmount(e.target.value);
+    setDonationForm({ ...donationForm, amount: e.target.value });
   };
   const handleBlur = (e) => {
     enterInputRef.current.style.zIndex = 0;
@@ -62,7 +65,7 @@ const DonationAmountBox = ({
         <div className="amount one">
           <input
             type="radio"
-            name="radio"
+            name="amount"
             className="radio"
             defaultChecked="true"
             value={5}
@@ -74,7 +77,7 @@ const DonationAmountBox = ({
         <div className="amount two">
           <input
             type="radio"
-            name="radio"
+            name="amount"
             className="radio"
             value={10}
             onClick={handleClick}
@@ -85,7 +88,7 @@ const DonationAmountBox = ({
         <div className="amount three">
           <input
             type="radio"
-            name="radio"
+            name="amount"
             className="radio"
             value={25}
             onClick={handleClick}
@@ -96,7 +99,7 @@ const DonationAmountBox = ({
         <div className="amount four">
           <input
             type="radio"
-            name="radio"
+            name="amount"
             className="radio"
             value={50}
             onClick={handleClick}
@@ -107,7 +110,7 @@ const DonationAmountBox = ({
         <div className="amount enter">
           <input
             type="radio"
-            name="radio"
+            name="amount"
             className="radio radio-enter"
             value={inputAmount}
             onClick={handleClick}
@@ -123,13 +126,13 @@ const DonationAmountBox = ({
           />
           <h2 className="usd-sign noSelect">$</h2>
         </div>
-        {donationAmount > 0 ? (
+        {donationForm.amount > 0 ? (
           <div className="amount result">
             {Object.keys(donationCoin).length ? (
               <h2>
                 ≈ {/* //if price is higher than 1000 then set more decimals */}
                 {amountCrypto.toFixed(
-                  donationCoin.current_price > 1000 < 3 ? 7 : 3
+                  donationCoin.current_price > 100 ? 7 : 3
                 )}{" "}
                 {donationCoin.symbol.toUpperCase()}
               </h2>

@@ -19,7 +19,7 @@ const DonationMethodBox = ({
   setNr,
   nr,
   setFilteredCoins,
-
+  setDonationForm,
   setSearch,
   search,
 }) => {

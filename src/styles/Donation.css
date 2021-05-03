@@ -200,6 +200,7 @@ header {
 .link-tohome {
   text-decoration: none;
   width: 45%;
+  background: transparent;
 }
 .done-btn {
   width: 100%;
@@ -214,5 +215,9 @@ header {
   .nav-donation > li {
     height: 2rem;
     font-size: 1rem;
+  }
+  .donation-description {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 0;
   }
 }

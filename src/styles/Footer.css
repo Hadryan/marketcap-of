@@ -1,3 +1,27 @@
+@keyframes opacity-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hand-rotate {
+  0% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes coin-fly {
+  to {
+    transform: translateY(-100px);
+  }
+}
 .footer {
   width: 100vw;
   display: flex;
@@ -81,6 +105,10 @@ hr {
   width: 2.25rem;
   height: 1.25rem;
 }
+.hand-anim {
+  animation-name: hand-rotate;
+  animation: hand-rotate 0.6s ease-in 1s;
+}
 .coin-over-hand {
   width: 1.15rem;
   height: 1.15rem;
@@ -89,7 +117,14 @@ hr {
   justify-self: center;
   align-self: end;
   opacity: 0.8;
+  animation: opacity-anim 1s, coin-fly 0.6s ease-out 1.15s 2 alternate;
 }
+/* .opacity {
+  animation-name: opacity-anim;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  opacity: 1;
+} */
 .donate-text {
   background-color: transparent;
   grid-column: 2/3;
