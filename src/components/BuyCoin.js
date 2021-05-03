@@ -46,7 +46,12 @@ const BuyCoin = ({ selectACoin }) => {
   return (
     <div>
       {exchangeAvailable ? (
-        <a className="link" href={currentRefLink} target="_blank">
+        <a
+          className="link"
+          href={currentRefLink}
+          target="_blank"
+          rel="nofollow"
+        >
           <button className="btn btn-buy">
             <p className="buy-text">Buy {lastCoin.symbol.toUpperCase()}</p>
           </button>
