@@ -29,7 +29,7 @@
   justify-content: center;
   flex-direction: column;
   bottom: 0;
-  position: relative;
+  /* position: relative; */
 }
 hr {
   margin: 1rem 0 1rem 0;
@@ -39,7 +39,7 @@ hr {
 }
 .copyright-text {
   margin: 1rem 0 1rem 0;
-  opacity: 0.7;
+  color: #b9b9bd;
 }
 .social-icon-row {
   width: 100%;

@@ -2,7 +2,7 @@ import React from "react";
 //route for Donation page
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 //components
-import BuyCoin from "../components/BuyCoin";
+import BuyCoinButton from "../components/BuyCoinButton";
 import iconHand from "../img/hand.svg";
 //pages
 import Donation from "../pages/Donation";
@@ -40,7 +40,7 @@ const Footer = ({
               </a>
             </li>
             <li>
-              <BuyCoin selectACoin={selectACoin} />
+              <BuyCoinButton selectACoin={selectACoin} />
             </li>
 
             <li>

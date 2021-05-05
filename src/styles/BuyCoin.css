@@ -1,3 +1,4 @@
+/* Button */
 @keyframes fadeInAndScale {
   0% {
     opacity: 0;
@@ -28,4 +29,92 @@
   .buy-text {
     font-size: 0.9rem;
   }
+}
+/* popup */
+.buy-coin-overlay {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  background-color: #0f0f18d2;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buy-popup {
+  height: auto;
+  width: auto;
+  max-height: 90%;
+  max-width: 500px;
+  margin: 0.75rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(#6e5b91 0%, #3b344e 67.77%, #292636 100%);
+  border: 1px solid rgba(211, 194, 233, 0.123);
+  border-radius: 20px;
+  /* to make border look the same all around */
+  background-origin: border-box;
+  z-index: 2;
+  position: relative;
+}
+.box-exchange {
+  top: 1rem;
+  width: 97%;
+  height: auto;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(30, 31, 44, 0.68);
+  border: 1px solid rgba(94, 86, 145, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.exchange-logo {
+  width: 9rem;
+  height: 1.75rem;
+}
+.Kraken {
+  height: 1.35rem;
+  width: 8rem;
+}
+.exchange-description {
+  margin-top: 0.4rem;
+  color: #e0e1e3;
+  background: transparent;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.exchange-btn {
+  position: relative;
+  width: 9rem;
+  height: 2rem;
+  background-color: #484063;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.15rem;
+  color: #e0e1e3;
+  margin: 0.5rem;
+}
+.exchange-btn:hover {
+  background-color: #5a507a;
+}
+.exchange-link {
+  background-color: transparent;
+  text-decoration: transparent;
+}
+.faTimes {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
 }
